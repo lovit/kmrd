@@ -1,4 +1,4 @@
-# Korean Movie Recommendation Dataset
+# Korean Movie Recommender system Dataset
 
 MovieLens style dataset built from Naver Movie rating systems with [Naver Movie Scraper][scraper]
 
