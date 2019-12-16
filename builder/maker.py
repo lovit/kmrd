@@ -106,7 +106,7 @@ def make_casting(data_dir, movie_indices, dataset_dir):
     castings_path = f'{dataset_dir}/castings.csv'
     roles_paths = f'{dataset_dir}/roles.txt'
 
-    # (movie idx, people idx, credit order, major)
+    # (movie idx, people idx, credit order, leading)
     castings = []
     # (movie idx, people idx, role name)
     roles = []
@@ -133,7 +133,7 @@ def make_casting(data_dir, movie_indices, dataset_dir):
             # load data
             people_idx = int(row['id'])
             name = (row['k_name'], row.get('e_name', ''))
-            major = 1 if row['part'].strip() == '주연' else 0
+            leading = 1 if row['part'].strip() == '주연' else 0
             role = row.get('role', '').strip()
             if role[-2:] == ' 역':
                 role = role[:-2].strip()
@@ -141,7 +141,7 @@ def make_casting(data_dir, movie_indices, dataset_dir):
 
             # append
             people_dictionary[people_idx] = name
-            castings.append((movie_idx, people_idx, order, major))
+            castings.append((movie_idx, people_idx, order, leading))
             roles.append((movie_idx, people_idx, role))
 
         if i % 100 == 0:
@@ -151,7 +151,7 @@ def make_casting(data_dir, movie_indices, dataset_dir):
             print(f'\rScanning {percent:.4}%: {n_peoples} peoples & {n_castings} castings from {n_movies} movies', end='')
     print(f'\rScanning has been finished. Found {n_peoples} peoples & {n_castings} castings from {n_movies} movies')
 
-    save_rows(castings, castings_path, 'movie,people,order,major', ',')
+    save_rows(castings, castings_path, 'movie,people,order,leading', ',')
     save_rows(roles, roles_paths, 'movie\tpeople\trole', '\t')
     people_dictionary = [(idx, names[0], names[1]) for idx, names in sorted(people_dictionary.items())]
     save_rows(people_dictionary, people_dictionary_path, 'people\tkorean\toriginal', '\t')
