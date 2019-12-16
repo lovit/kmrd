@@ -183,3 +183,68 @@ def make_casting(data_dir, movie_indices, dataset_dir):
         for row in people_dictionary:
             row_strf = row_to_str(row, delimiter='\t')
             f.write(f'{row_strf}\n')
+
+def make_meta(data_dir, movie_indices, dataset_dir):
+    genres_path = f'{dataset_dir}/genres.csv'
+    dates_path = f'{dataset_dir}/dates.csv'
+    countries_path = f'{dataset_dir}/countries.csv'
+    movies_path = f'{dataset_dir}/movies.txt'
+
+    n_movies = len(movie_indices)
+    # (movie idx, genre)
+    genres = []
+    # (movie idx, date)
+    dates = []
+    # (movie idx, country)
+    countries = []
+    # (movie idx, title, title eng, grade)
+    movies = []
+
+    for i, movie_idx in enumerate(movie_indices):
+        inpath = f'{data_dir}/meta/{movie_idx}.json'
+        if not os.path.exists(inpath):
+            continue
+        with open(inpath, encoding='utf-8') as f:
+            data = json.load(f)
+
+        title = data['title']
+        title_eng = data.get('e_title', '')
+        grade = data.get('grade', '')
+        genres_i = data.get('genres', [])
+        dates_i = data.get('open_date', [])
+        countries_i = data.get('countries', [])
+
+        movies.append((movie_idx, title, title_eng, grade))
+        for g in genres_i:
+            genres.append((movie_idx, g))
+        for d in dates_i:
+            dates.append((movie_idx, d))
+        for c in countries_i:
+            countries.append((movie_idx, c))
+
+        if i % 100 == 0:
+            print(f'Scanned metadata from {i+1} / {n_movies} movies')
+
+    with open(genres_path, 'w', encoding='utf-8') as f:
+        f.write(f'movie,genre\n')
+        for row in genres:
+            row_strf = row_to_str(row, delimiter=',')
+            f.write(f'{row_strf}\n')
+
+    with open(dates_path, 'w', encoding='utf-8') as f:
+        f.write(f'movie,date\n')
+        for row in dates:
+            row_strf = row_to_str(row, delimiter=',')
+            f.write(f'{row_strf}\n')
+
+    with open(countries_path, 'w', encoding='utf-8') as f:
+        f.write(f'movie,country\n')
+        for row in countries:
+            row_strf = row_to_str(row, delimiter=',')
+            f.write(f'{row_strf}\n')
+
+    with open(movies_path, 'w', encoding='utf-8') as f:
+        f.write(f'movie\ttitle\ttitle_eng\tgrade\n')
+        for row in movies:
+            row_strf = row_to_str(row, delimiter='\t')
+            f.write(f'{row_strf}\n')
