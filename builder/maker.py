@@ -1,12 +1,12 @@
 import os
 import json
-from .utils import initialize_usermapper
-from .utils import save_usermapper
-from .utils import save_rows
-from .utils import load_usermapper
-from .utils import load_list_of_dict
-from .utils import mask_user
-from .utils import to_unix_time
+from utils import initialize_usermapper
+from utils import save_usermapper
+from utils import save_rows
+from utils import load_usermapper
+from utils import load_list_of_dict
+from utils import mask_user
+from utils import to_unix_time
 
 def make_ratings(data_dir, movie_indices, dataset_dir):
     texts_path = f'{dataset_dir}/texts.txt'
