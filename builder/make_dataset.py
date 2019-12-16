@@ -1,4 +1,5 @@
 import argparse
+import os
 from glob import glob
 from maker import make_ratings, make_casting, make_directing, make_meta
 
@@ -13,6 +14,9 @@ def main():
     data_dir = args.data_dir
     dataset_dir = args.dataset_dir
     debug = args.debug
+
+    if not os.path.exists(dataset_dir):
+        os.makedirs(dataset_dir)
 
     movie_indices = [int(path.split('/')[-1][:-5]) for path in glob(f'{data_dir}/meta/*')]
     movie_indices += [int(path.split('/')[-1]) for path in glob(f'{data_dir}/comments/*')]

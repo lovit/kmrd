@@ -17,6 +17,7 @@ def make_ratings(data_dir, movie_indices, dataset_dir):
     rates_dumps = []
     texts_dumps = []
 
+    n_exceptions = 0
     n_movies = len(movie_indices)
     for i, movie_idx in enumerate(movie_indices):
         inpath = f'{data_dir}/comments/{movie_idx}'
@@ -29,25 +30,32 @@ def make_ratings(data_dir, movie_indices, dataset_dir):
         texts = []
 
         for comment in comments:
-            user_idx = mask_user(comment['user'], user_id_mapper)
-            timestamp = to_unix_time(comment['written_at'])
-            rate = comment['score']
-            text = comment['text']
-            agree, disagree = comment['agree'], comment['disagree']
+            try:
+                user_idx = mask_user(comment['user'], user_id_mapper)
+                timestamp = to_unix_time(comment['written_at'])
+                rate = comment['score']
+                text = comment['text']
+                agree, disagree = comment['agree'], comment['disagree']
 
-            rates.append((user_idx, movie_idx, rate, timestamp))
-            if text:
-                texts.append((user_idx, movie_idx, agree, disagree, text))
+                rates.append((user_idx, movie_idx, rate, timestamp))
+                if text:
+                    texts.append((user_idx, movie_idx, agree, disagree, text))
+            except Exception as e:
+                print(e)
+                print(comment, end='\n\n')
+                n_exceptions += 1
+                continue
 
         rates_dumps += rates
         texts_dumps += texts
 
-        if i % 100 == 0:
+        if i % 1000 == 0:
             percent = 100 * (i+1) / n_movies
             n_rates = len(rates_dumps)
             n_texts = len(texts_dumps)
             print(f'\rScanning {percent:.4}%: {n_rates} rates & {n_texts} texts from {n_movies} movies', end='')
     print(f'\rScanning has been finished. Found {n_rates} rates & {n_texts} texts from {n_movies} movies')
+    print(f'Number of exceptions = {n_exceptions}')
 
     rates_dumps = sorted(rates_dumps)
     texts_dumps = sorted(texts_dumps)
@@ -83,14 +91,18 @@ def make_directing(data_dir, movie_indices, dataset_dir):
 
         for row in rows:
             # load data
-            people_idx = int(row['id'])
+            people_idx = row['id']
+            # exception: (no link director)
+            if isinstance(people_idx, list) and (not people_idx):
+                continue
+            people_idx = int(people_idx)
             name = (row['k_name'], row.get('e_name', ''))
 
             # append
             people_dictionary[people_idx] = name
             directings.append((movie_idx, people_idx))
 
-        if i % 100 == 0:
+        if i % 5000 == 0:
             percent = 100 * (i+1) / n_movies
             n_peoples = len(people_dictionary)
             n_directings = len(directings)
@@ -131,7 +143,11 @@ def make_casting(data_dir, movie_indices, dataset_dir):
 
         for row in rows:
             # load data
-            people_idx = int(row['id'])
+            people_idx = row['id']
+            # exception: (no link director)
+            if isinstance(people_idx, list) and (not people_idx):
+                continue
+            people_idx = int(people_idx)
             name = (row['k_name'], row.get('e_name', ''))
             leading = 1 if row['part'].strip() == '주연' else 0
             role = row.get('role', '').strip()
@@ -144,12 +160,12 @@ def make_casting(data_dir, movie_indices, dataset_dir):
             castings.append((movie_idx, people_idx, order, leading))
             roles.append((movie_idx, people_idx, role))
 
-        if i % 100 == 0:
+        if i % 5000 == 0:
             percent = 100 * (i+1) / n_movies
             n_peoples = len(people_dictionary)
             n_castings = len(castings)
             print(f'\rScanning {percent:.4}%: {n_peoples} peoples & {n_castings} castings from {n_movies} movies', end='')
-    print(f'\rScanning has been finished. Found {n_peoples} peoples & {n_castings} castings from {n_movies} movies')
+    print(f'\rScanning has been finished. Found {n_peoples} peoples & {n_castings} castings from {n_movies} movies\n')
 
     save_rows(castings, castings_path, 'movie,people,order,leading', ',')
     save_rows(roles, roles_paths, 'movie\tpeople\trole', '\t')
@@ -197,10 +213,10 @@ def make_meta(data_dir, movie_indices, dataset_dir):
         for c in countries_i:
             countries.append((movie_idx, c))
 
-        if i % 100 == 0:
+        if i % 5000 == 0:
             percent = 100 * (i+1) / n_movies
             print(f'\rScanning metadata: {percent:.4}% from {i+1} / {n_movies} movies', end='')
-    print(f'\rScanning metadata was finished with {n_movies} movies{" "*20}')
+    print(f'\rScanning metadata was finished with {n_movies} movies{" "*20}\n')
 
     save_rows(genres, genres_path, 'movie,genre', ',')
     save_rows(dates, dates_path, 'movie,date', ',')
