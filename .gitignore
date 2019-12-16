@@ -13,3 +13,9 @@ tmp/
 
 # Jupyter notebook
 .ipynb_checkpoints/
+
+# dataset
+*.txt
+*.csv
+userlist
+
