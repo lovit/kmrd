@@ -27,3 +27,20 @@ def load_usermapper(path):
     with open(path, encoding='utf-8') as f:
         user_id_mapper = {user.strip():idx for idx, user in enumerate(f)}
     return user_id_mapper
+
+def load_list_of_dict(path):
+    """
+    Arguments
+    ---------
+    path : str
+        File path
+
+    Returns
+    -------
+    obj : list of dict
+        Object to store
+    """
+
+    with open(path, encoding='utf-8') as f:
+        objs = [json.loads(obj.strip()) for obj in f]
+    return objs
