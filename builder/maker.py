@@ -8,18 +8,16 @@ from .utils import load_list_of_dict
 from .utils import mask_user
 from .utils import to_unix_time
 
-def row_to_str(row, delimiter=','):
-    return delimiter.join([str(v) for v in row])
-
 def make_ratings(data_dir, movie_indices, dataset_dir):
     texts_path = f'{dataset_dir}/texts.txt'
     rates_path = f'{dataset_dir}/rates.csv'
     userlist_path = f'{dataset_dir}/userlist'
     user_id_mapper = initialize_usermapper(load_usermapper(userlist_path))
 
-    n_movies = len(movie_indices)
     rates_dumps = []
     texts_dumps = []
+
+    n_movies = len(movie_indices)
     for i, movie_idx in enumerate(movie_indices):
         inpath = f'{data_dir}/comments/{movie_idx}'
         if not os.path.exists(inpath):
@@ -43,29 +41,22 @@ def make_ratings(data_dir, movie_indices, dataset_dir):
 
         rates_dumps += rates
         texts_dumps += texts
-        n_rates = len(rates_dumps)
-        n_texts = len(texts_dumps)
-        print(f'Scanned {n_rates} rates & {n_texts} texts from {i+1} / {n_movies} movies')
+
+        if i % 100 == 0:
+            percent = 100 * (i+1) / n_movies
+            n_rates = len(rates_dumps)
+            n_texts = len(texts_dumps)
+            print(f'\rScanning {percent:.4}%: {n_rates} rates & {n_texts} texts from {n_movies} movies', end='')
+    print(f'\rScanning has been finished. Found {n_rates} rates & {n_texts} texts from {n_movies} movies')
 
     rates_dumps = sorted(rates_dumps)
     texts_dumps = sorted(texts_dumps)
 
-    with open(rates_path, 'w', encoding='utf-8') as f:
-        f.write(f'user,movie,rate,time\n')
-        for row in rates_dumps:
-            row_strf = row_to_str(row, delimiter=',')
-            f.write(f'{row_strf}\n')
-
-    with open(texts_path, 'w', encoding='utf-8') as f:
-        f.write('user\tmovie\tagree\tdisagree\ttext\n')
-        for row in texts_dumps:
-            row_strf = row_to_str(row, delimiter='\t')
-            f.write(f'{row_strf}\n')
-
+    save_rows(rates_dumps, rates_path, 'user,movie,rate,time', ',')
+    save_rows(texts_dumps, texts_path, 'user\tmovie\tagree\tdisagree\ttext', '\t')
     save_usermapper(user_id_mapper, userlist_path)
 
 def make_directing(data_dir, movie_indices, dataset_dir):
-
     people_dictionary_path = f'{dataset_dir}/peoples.txt'
     directings_path = f'{dataset_dir}/directings.csv'
 
@@ -100,25 +91,17 @@ def make_directing(data_dir, movie_indices, dataset_dir):
             directings.append((movie_idx, people_idx))
 
         if i % 100 == 0:
+            percent = 100 * (i+1) / n_movies
             n_peoples = len(people_dictionary)
             n_directings = len(directings)
-            print(f'Scanned {n_peoples} peoples & {n_directings} directings from {i+1}/{n_movies} movies')
+            print(f'\rScanning {percent:.4}%: {n_peoples} peoples & {n_directings} directings from {n_movies} movies', end='')
+    print(f'\rScanning has been finished. Found {n_peoples} peoples & {n_directings} directings from {n_movies} movies')
 
-    with open(directings_path, 'w', encoding='utf-8') as f:
-        f.write('movie,people\n')
-        for row in directings:
-            row_strf = row_to_str(row, delimiter=',')
-            f.write(f'{row_strf}\n')
-
+    save_rows(directings, directings_path, 'movie,people', ',')
     people_dictionary = [(idx, names[0], names[1]) for idx, names in sorted(people_dictionary.items())]
-    with open(people_dictionary_path, 'w', encoding='utf-8') as f:
-        f.write('people\tkorean\toriginal\n')
-        for row in people_dictionary:
-            row_strf = row_to_str(row, delimiter='\t')
-            f.write(f'{row_strf}\n')
+    save_rows(people_dictionary, people_dictionary_path, 'people\tkorean\toriginal', '\t')
 
 def make_casting(data_dir, movie_indices, dataset_dir):
-
     people_dictionary_path = f'{dataset_dir}/peoples.txt'
     castings_path = f'{dataset_dir}/castings.csv'
     roles_paths = f'{dataset_dir}/roles.txt'
@@ -162,28 +145,16 @@ def make_casting(data_dir, movie_indices, dataset_dir):
             roles.append((movie_idx, people_idx, role))
 
         if i % 100 == 0:
+            percent = 100 * (i+1) / n_movies
             n_peoples = len(people_dictionary)
             n_castings = len(castings)
-            print(f'Scanned {n_peoples} peoples & {n_castings} castings from {i+1}/{n_movies} movies')
+            print(f'\rScanning {percent:.4}%: {n_peoples} peoples & {n_castings} castings from {n_movies} movies', end='')
+    print(f'\rScanning has been finished. Found {n_peoples} peoples & {n_castings} castings from {n_movies} movies')
 
-    with open(castings_path, 'w', encoding='utf-8') as f:
-        f.write('movie,people,order,major\n')
-        for row in castings:
-            row_strf = row_to_str(row, delimiter=',')
-            f.write(f'{row_strf}\n')
-
-    with open(roles_paths, 'w', encoding='utf-8') as f:
-        f.write('movie\tpeople\trole\n')
-        for row in roles:
-            row_strf = row_to_str(row, delimiter='\t')
-            f.write(f'{row_strf}\n')
-
+    save_rows(castings, castings_path, 'movie,people,order,major', ',')
+    save_rows(roles, roles_paths, 'movie\tpeople\trole', '\t')
     people_dictionary = [(idx, names[0], names[1]) for idx, names in sorted(people_dictionary.items())]
-    with open(people_dictionary_path, 'w', encoding='utf-8') as f:
-        f.write('people\tkorean\toriginal\n')
-        for row in people_dictionary:
-            row_strf = row_to_str(row, delimiter='\t')
-            f.write(f'{row_strf}\n')
+    save_rows(people_dictionary, people_dictionary_path, 'people\tkorean\toriginal', '\t')
 
 def make_meta(data_dir, movie_indices, dataset_dir):
     genres_path = f'{dataset_dir}/genres.csv'
@@ -227,7 +198,9 @@ def make_meta(data_dir, movie_indices, dataset_dir):
             countries.append((movie_idx, c))
 
         if i % 100 == 0:
-            print(f'Scanned metadata from {i+1} / {n_movies} movies')
+            percent = 100 * (i+1) / n_movies
+            print(f'\rScanning metadata: {percent:.4}% from {i+1} / {n_movies} movies', end='')
+    print(f'\rScanning metadata was finished with {n_movies} movies{" "*20}')
 
     save_rows(genres, genres_path, 'movie,genre', ',')
     save_rows(dates, dates_path, 'movie,date', ',')
