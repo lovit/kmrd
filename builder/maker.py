@@ -2,6 +2,7 @@ import os
 import json
 from .utils import initialize_usermapper
 from .utils import save_usermapper
+from .utils import save_rows
 from .utils import load_usermapper
 from .utils import load_list_of_dict
 from .utils import mask_user
@@ -197,7 +198,7 @@ def make_meta(data_dir, movie_indices, dataset_dir):
     dates = []
     # (movie idx, country)
     countries = []
-    # (movie idx, title, title eng, grade)
+    # (movie idx, title, title eng, year, grade)
     movies = []
 
     for i, movie_idx in enumerate(movie_indices):
@@ -212,9 +213,12 @@ def make_meta(data_dir, movie_indices, dataset_dir):
         grade = data.get('grade', '')
         genres_i = data.get('genres', [])
         dates_i = data.get('open_date', [])
+        year = ''
+        if dates_i:
+            year = dates_i[0][:4]
         countries_i = data.get('countries', [])
 
-        movies.append((movie_idx, title, title_eng, grade))
+        movies.append((movie_idx, title, title_eng, year, grade))
         for g in genres_i:
             genres.append((movie_idx, g))
         for d in dates_i:
@@ -225,26 +229,7 @@ def make_meta(data_dir, movie_indices, dataset_dir):
         if i % 100 == 0:
             print(f'Scanned metadata from {i+1} / {n_movies} movies')
 
-    with open(genres_path, 'w', encoding='utf-8') as f:
-        f.write(f'movie,genre\n')
-        for row in genres:
-            row_strf = row_to_str(row, delimiter=',')
-            f.write(f'{row_strf}\n')
-
-    with open(dates_path, 'w', encoding='utf-8') as f:
-        f.write(f'movie,date\n')
-        for row in dates:
-            row_strf = row_to_str(row, delimiter=',')
-            f.write(f'{row_strf}\n')
-
-    with open(countries_path, 'w', encoding='utf-8') as f:
-        f.write(f'movie,country\n')
-        for row in countries:
-            row_strf = row_to_str(row, delimiter=',')
-            f.write(f'{row_strf}\n')
-
-    with open(movies_path, 'w', encoding='utf-8') as f:
-        f.write(f'movie\ttitle\ttitle_eng\tgrade\n')
-        for row in movies:
-            row_strf = row_to_str(row, delimiter='\t')
-            f.write(f'{row_strf}\n')
+    save_rows(genres, genres_path, 'movie,genre', ',')
+    save_rows(dates, dates_path, 'movie,date', ',')
+    save_rows(countries, countries_path, 'movie,country', ',')
+    save_rows(movies, movies_path, 'movie\ttitle\ttitle_eng\tyear\tgrade', '\t')

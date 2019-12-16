@@ -45,3 +45,12 @@ def load_list_of_dict(path):
     with open(path, encoding='utf-8') as f:
         objs = [json.loads(obj.strip()) for obj in f]
     return objs
+
+def save_rows(rows, path, header, delimiter):
+    def row_to_str(row, delimiter=','):
+        return delimiter.join([str(v) for v in row])
+
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(f'{header}\n')
+        for row in rows:
+            f.write(f'{row_to_str(row, delimiter=delimiter)}\n')
