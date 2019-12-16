@@ -7,8 +7,8 @@ installpath = os.path.abspath(os.path.dirname(__file__))
 
 def _initialize_dir(directory, size):
     if directory is None:
-        directory = installpath
-    return f'{directory}/datafile/kmrd-small/'
+        return f'{installpath}/datafile/kmrd-small/'
+    return f'{directory}/'
 
 def _check_install(path):
     if not os.path.exists(path):
