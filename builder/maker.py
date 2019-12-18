@@ -153,7 +153,7 @@ def make_casting(data_dir, movie_indices, dataset_dir):
             role = row.get('role', '').strip()
             if role[-2:] == ' 역':
                 role = role[:-2].strip()
-            order = row.get('casting_order', row['cating_order'])
+            order = row.get('casting_order', row.get('cating_order', -1))
 
             # append
             people_dictionary[people_idx] = name
