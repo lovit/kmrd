@@ -6,7 +6,7 @@ MovieLens style dataset built from Naver Movie rating systems with [Naver Movie 
 
 ## KMRD-small
 
-Dataset with 999 movies, 52k users, 134k rates. Identifier of users is masked. `timestamps` format is UNIX time (second).
+Dataset consists with 999 movies, 52k users and 134k rates. All identifier of users are masked. `timestamps` format is UNIX time (second).
 
 ```python
 from kmr_dataset import load_rates
