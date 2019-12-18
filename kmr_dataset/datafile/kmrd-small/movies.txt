@@ -1,0 +1,1000 @@
+movie	title	title_eng	year	grade
+10001	시네마 천국	Cinema Paradiso , 1988	2013	전체 관람가
+10002	빽 투 더 퓨쳐	Back To The Future , 1985	2015	12세 관람가
+10003	빽 투 더 퓨쳐 2	Back To The Future Part 2 , 1989	2015	12세 관람가
+10004	빽 투 더 퓨쳐 3	Back To The Future Part III , 1990	1990	전체 관람가
+10005	스타워즈 에피소드 4 - 새로운 희망	Star Wars , 1977	1997	PG
+10006	스타워즈 에피소드 5 - 제국의 역습	Star Wars Episode V: The Empire Strikes Back , 1980	1997	PG
+10007	스타워즈 에피소드 6 - 제다이의 귀환	Star Wars: Episode VI: Return Of The Jedi , 1983	1997	PG
+10008	슈퍼맨	Superman , 1978	1979	PG
+10009	슈퍼맨 2	Superman II , 1980	1981	PG
+10010	슈퍼맨 3	Superman III , 1983		전체 관람가
+10011	슈퍼맨 4 - 최강의 적	Superman IV: The Quest For Peace , 1987	1990	전체 관람가
+10012	다이 하드	Die Hard , 1988	1988	15세 관람가
+10013	킹콩	King Kong , 1976	1977	12세 관람가
+10014	금지된 장난	Jeux Interdits , Forbidden Games , 1952	1992	12세 관람가
+10015	타워링	The Towering Inferno , 1974	2012	PG
+10016	나 홀로 집에	Home Alone , 1990	1991	전체 관람가
+10017	셰인	Shane , 1953	1956	NR
+10018	이티	The Extra-Terrestrial , E.T. , 1982	2011	전체 관람가
+10019	내일을 향해 쏴라	Butch Cassidy And The Sundance Kid , 1969	1970	15세 관람가
+10020	바람과 함께 사라지다	Gone With The Wind , 1939	1995	12세 관람가
+10021	록키	Rocky , 1976	2017	12세 관람가
+10022	록키 2	Rocky II , 1979	1980	12세 관람가
+10023	록키 3	Rocky III , 1982	1982	12세 관람가
+10024	록키 4	Rocky IV , 1985	1987	12세 관람가
+10025	록키 5	Rocky V , 1990	1990	15세 관람가
+10026	리썰 웨폰	Lethal Weapon , 1987	1987	청소년 관람불가
+10027	리썰 웨폰 2	Lethal Weapon 2 , 1989	1990	청소년 관람불가
+10028	터미네이터	The Terminator , 1984	1984	청소년 관람불가
+10029	죠스	Jaws , 1975	1978	12세 관람가
+10030	죠스 2	Jaws 2 , 1978	1979	12세 관람가
+10031	죠스 3	Jaws 3-D , 1983		15세 관람가
+10032	죠스 4	Jaws: The Revenge , 1987		PG-13
+10033	레이더스	Raiders Of The Lost Ark , 1981	1982	12세 관람가
+10034	인디아나 존스	Indiana Jones And The Temple Of Doom , 1984	1985	12세 관람가
+10035	인디아나 존스 - 최후의 성전	Indiana Jones And The Last Crusade , 1989	1989	12세 관람가
+10036	코만도	Commando , 1985	1985	청소년 관람불가
+10037	에이리언	Alien , 1979	1987	15세 관람가
+10038	에이리언 2	Aliens , 1986	1986	15세 관람가
+10039	플래툰	Platoon , 1986	2017	15세 관람가
+10040	구니스	The Goonies , 1985	1986	전체 관람가
+10041	포세이돈 어드벤쳐	The Poseidon Adventure , 1972	1978	15세 관람가
+10042	콰이강의 다리	The Bridge On The River Kwai , 1957	1981	PG
+10043	나바론 요새	The Guns Of Navarone , 1961	1977	PG
+10044	나바론 요새 2	Force 10 From Navarone , 1978	1979	PG
+10045	킬링 필드	The Killing Fields , 1984	1985	15세 관람가
+10046	빠삐용	Papillon , 1973	2016	청소년 관람불가
+10047	스팅	The Sting , 1973	1978	15세 관람가
+10048	죽은 시인의 사회	Dead Poets Society , 1989	2016	12세 관람가
+10049	그렘린	Gremlins , 1984	1985	PG
+10050	싸이코	Psycho , 1960	1962	청소년 관람불가
+10051	싸이코 2	Psycho II , 1983		청소년 관람불가
+10052	싸이코 3	Psycho III , 1986		청소년 관람불가
+10053	자이언트	Giant , 1956	1974	12세 관람가
+10054	라 밤바	La Bamba , 1987	1988	12세 관람가
+10055	람보	First Blood , 1982	1983	15세 관람가
+10056	람보 2	Rambo: First Blood Part II , 1985	1985	15세 관람가
+10057	람보 3	Rambo III , 1988	1988	15세 관람가
+10058	벤허	Ben-Hur , 1959	2019	전체 관람가
+10059	끝없는 사랑	Endless Love , 1981	1981	R
+10060	스미스씨 워싱톤 가다	Mr. Smith Goes To Washington , 1939		12세 관람가
+10061	프레데터	Predator , 1987	1987	청소년 관람불가
+10062	프레데터 2	Predator 2 , 1990	1990	15세 관람가
+10063	별들의 고향	Heavenly Homecoming to Stars , 1974	1974	청소년 관람불가
+10064	십계	The Ten Commandments , 1956	1982	전체 관람가
+10065	엑소시스트	The Exorcist , 1973	2001	15세 관람가
+10066	오멘	The Omen , 1976	1977	청소년 관람불가
+10067	영자의 전성시대	英子의 全盛時代 , Yeong-Ja's Heydays , 1975	1975	청소년 관람불가
+10068	언터처블	The Untouchables , 1987	1989	청소년 관람불가
+10069	황야의 무법자	Per Un Pugno Di Dollari , A Fistful Of Dollars , 1964	1966	15세 관람가
+10070	OK 목장의 결투	Gunfight At The O.K. Corral , 1957	1958	12세 관람가
+10071	대부	Mario Puzo's The Godfather , 1972	2010	청소년 관람불가
+10072	대부 2	Mario Puzo's The Godfather Part II , 1974	2010	청소년 관람불가
+10073	티파니에서 아침을	Breakfast At Tiffany's , 1961	2012	15세 관람가
+10074	스타 트랙	Star Trek: The Motion Picture , 1979		G
+10075	스타 트랙 2 - 칸의 분노	Star Trek II: The Wrath Of Khan , 1982		PG
+10076	스타 트랙 3 - 스포크를 찾아서	Star Trek III: The Search For Spock , 1984		PG
+10077	스타 트랙 4 - 귀환의 항로	Star Trek IV: The Voyage Home , 1986		12세 관람가
+10078	스타 트랙 5 - 최후의 결전	Star Trek V: The Final Frontier , 1989		PG
+10079	스타 트랙 6 - 미지의 세계	Star Trek VI: The Undiscovered Country , 1991		PG
+10080	폴리스 아카데미	Police Academy , 1984	1985	R
+10081	폴리스 아카데미 2 - 첫임무	Police Academy 2: Their First Assignment , 1985	1987	PG-13
+10082	폴리스 아카데미 3 - 재훈련	Police Academy 3: Back In Training , 1986	1986	PG
+10083	폴리스 아카데미 4 - 시민 순찰대	Police Academy 4: Citizens On Patrol , 1987		PG
+10084	폴리스 아카데미 5 - 마이애미 비치 임무	Police Academy 5: Assignment Miami Beach , 1988		PG
+10085	폴리스 아카데미 6	Police Academy 6: City Under Siege , 1989		PG
+10086	미션	The Mission , 1986	2019	12세 관람가
+10087	토요일 밤의 열기	Saturday Night Fever , 1977	1978	청소년 관람불가
+10088	파이어폭스	Firefox , 1982	1983	12세 관람가
+10089	그리스	Grease , 1978	1980	12세 관람가
+10090	챔프	The Champ , 1979	1979	NR
+10091	네 멋대로 해라	A Bout De Souffle , Breathless , 1959		NR
+10092	네버엔딩 스토리	The NeverEnding Story , 1984	1988	전체 관람가
+10093	러브 스토리	Love Story , 1970	1971	15세 관람가
+10094	마이 웨이	The Winners , My Way , 1975	1979	NR
+10095	고스트버스터즈	Ghostbusters , 1984	1984	12세 관람가
+10096	고스트버스터즈 2	Ghostbusters II , 1989	1990	PG
+10097	굿모닝 베트남	Good Morning, Vietnam , 1987		15세 관람가
+10098	자유의 댄스	Footloose , 1984		PG
+10099	남과 여	Un Homme Et Une Femme , A Man And A Woman , 1966	1979	15세 관람가
+10100	탑건	Top Gun , 1986	2018	15세 관람가
+10101	로마의 휴일	Roman Holiday , 1953	1955	NR
+10102	사운드 오브 뮤직	The Sound Of Music , 1965	2017	전체 관람가
+10103	닥터 지바고	Doctor Zhivago , 1965	2012	12세 관람가
+10104	사관과 신사	An Officer And A Gentleman , 1982	1983	청소년 관람불가
+10105	사랑은 비를 타고	Singin' In The Rain , 1952	1954	전체 관람가
+10106	카사블랑카	Casablanca , 1942	1999	12세 관람가
+10107	아웃 오브 아프리카	Out Of Africa , 1985	1986	PG
+10108	그리스 2	Grease 2 , 1982		PG
+10109	호소자	好小子 , Young Dragons: Kung Fu Kids , 1986	1986	NR
+10110	영웅본색	英雄本色 , A Better Tomorrow , 1986	2016	15세 관람가
+10111	영웅본색 2	英雄本色 II , A Better Tomorrow II , 1987	2016	15세 관람가
+10112	영웅본색 3	英雄本色 III - 夕陽之歌: A Better Tomorrow III , 1989	2016	15세 관람가
+10113	첩혈쌍웅	牒血雙雄 , The Killer , 1989	2016	청소년 관람불가
+10114	아마데우스	Amadeus , 1984	2015	12세 관람가
+10115	용형호제 2 - 비룡계획	飛鷹計劃 , Armour Of God II: Operation Condor , 1990	2015	전체 관람가
+10116	스플래쉬	Splash , 1984	1988	PG
+10117	라붐	La Boum , 1980	2013	15세 관람가
+10118	라붐 2	La Boum 2 , 1982	1986	15세 관람가
+10119	엘리게이터	Alligator , 1980	1981	청소년 관람불가
+10120	엘리게이터 2	Alligator II: The Mutation , 1991	1991	PG-13
+10121	내 이름은 튜니티	Lo chiamavano Trinita , They Call Me Trinity... , 1970	1979	12세 관람가
+10122	트와이라잇	Twilight , 1998		청소년 관람불가
+10123	튜니티라 불러다오	...Continuavano A Chiamarlo Trinita , Trinity Is Still My Name! , 1972		G
+10124	에어플레인	Airplane! , 1980		15세 관람가
+10125	에어플레인 2	Airplane II: The Sequel , 1982		15세 관람가
+10126	강시번생	殭屍翻生 , New Mr. Vampire , 1986	1988	NR
+10127	스타 탄생	A Star Is Born , 1976	1977	NR
+10128	디어 헌터	Die durch die Holle gehen , The Deer Hunter , 1978	1979	청소년 관람불가
+10129	캐디쉑	Caddyshack , 1980		R
+10130	미드나잇 익스프레스	Midnight Express , 1978	1996	청소년 관람불가
+10131	캐논볼	Carrera de locos , The Cannonball Run , 1981	2015	15세 관람가
+10132	귀여운 여인	Pretty Woman , 1990	1990	청소년 관람불가
+10133	고래 사냥	Whale Hunting , 1984	1984	12세 관람가
+10134	고래 사냥 2	Whale Hunting 2 , 1985	1985	15세 관람가
+10135	차이나타운	Chinatown , 1974		청소년 관람불가
+10136	파라다이스	Paradise , 1982		청소년 관람불가
+10137	펌프킨헤드	Pumpkinhead , 1988	1989	15세 관람가
+10138	정복자 펠레	Pelle Erovraren , Pelle The Conqueror , 1987	1989	12세 관람가
+10139	파울 플레이	Foul Play , 1978	1980	PG
+10140	매드 맥스	Mad Max , 1979	1980	청소년 관람불가
+10141	매드 맥스 2	The Road Warrior , 1981		청소년 관람불가
+10142	매드 맥스 3	Mad Max: Beyond Thunderdome , 1985	1985	PG-13
+10143	애정의 조건	Terms Of Endearment xxx , 1983	1984	PG
+10144	햄릿	Hamlet , 1990		15세 관람가
+10145	아메리칸 지골로	Ein Mann fur gewisse Stunden , American Gigolo , 1980	1985	청소년 관람불가
+10146	나인 하프 위크	Nine 1/2 Weeks , 1986	1986	청소년 관람불가
+10147	인도로 가는 길	A Passage To India , 1984	1986	15세 관람가
+10148	최가박당	光頭神探적장元 最佳拍 , Aces Go Places , 1982	1983	NR
+10149	나이트메어	A Nightmare On Elm Street , 1984	1985	청소년 관람불가
+10150	바보들의 행진	The March Of Fools , 1975	1975	NR
+10151	바람 불어 좋은 날	Good Windy Day , 1980	1980	청소년 관람불가
+10152	자전거 도둑	Ladri Di Biciclette , The Bicycle Thief , 1948	1952	NR
+10153	로보트 태권V	Robot Taekwon V , 1976	2007	전체 관람가
+10154	폴링 인 러브	Falling In Love , 1984	1987	청소년 관람불가
+10155	007 살인번호	Dr. No , 1962	1965	NR
+10156	007 위기일발	From Russia With Love , 1963	1973	NR
+10157	007 골드핑거	Ian Fleming's Goldfinger , 1964	2015	NR
+10158	007 선더볼 작전	Thunderball , 1965	1969	PG
+10159	007 두번 산다	You Only Live Twice , 1967	1969	PG
+10160	007 카지노 로얄	Casino Royale , 1967	1971	NR
+10161	007과 여왕	On Her Majesty's Secret Service , 1969	1970	PG
+10162	007 다이아몬드는 영원히	Diamonds Are Forever , 1971	1972	PG
+10163	007 죽느냐 사느냐	Live And Let Die , 1973	1973	PG
+10164	007 황금총을 가진 사나이	The Man With The Golden Gun , 1974	1975	PG
+10165	007 나를 사랑한 스파이	The Spy Who Loved Me , 1977	1978	15세 관람가
+10166	007 문레이커	Moonraker , 1979	1981	15세 관람가
+10167	007 유어 아이스 온리	For Your Eyes Only , 1981	1982	PG
+10168	007 네버 세이 네버 어게인	Never Say Never Again , 1983	1983	PG
+10169	007 옥터퍼시	Octopussy , 1983	1984	NR
+10170	007 뷰 투 어 킬	A View To A Kill , 1985	1985	PG
+10171	007 리빙 데이라이트	The Living Daylights , 1987	1989	15세 관람가
+10172	007 살인면허	Licence To Kill , 1989	1989	12세 관람가
+10173	사랑과 영혼	Ghost , 1990	2017	15세 관람가
+10174	지저스 크라이스트 슈퍼스타	Jesus Christ Superstar , 1973		G
+10175	스탠리와 아이리스	Stanley & Iris , 1990		PG-13
+10176	남과 북	North And South , 1985	1985	
+10177	남과 북 2	North And South II , 1986	1986	
+10178	13일의 금요일	Friday The 13th , 1980	1981	15세 관람가
+10179	하이 눈	High Noon , 1952	1954	15세 관람가
+10180	대통령을 만드는 사람들	Favorite Son , 1988	1988	
+10181	정무문	精武門 , Fist Of Fury , 1972	2013	15세 관람가
+10182	용쟁호투	Enter The Dragon , 1973	1973	청소년 관람불가
+10183	맹룡과강	猛龍過江 , The Way Of The Dragon , 1972	2013	15세 관람가
+10184	당산대형	唐山大兄 , The Big Boss , 1971	2015	15세 관람가
+10185	로미오와 줄리엣	Romeo And Juliet , 1968	1978	12세 관람가
+10186	돌아이	Imbecile , 1985	1985	12세 관람가
+10187	13일의 금요일 2	Friday The 13th, Part 2 , 1981		청소년 관람불가
+10188	13일의 금요일 3	Friday The 13th Part III , 1982		청소년 관람불가
+10189	13일의 금요일 4	Friday The 13th, The Final Chapter , 1984	1985	청소년 관람불가
+10190	코난 - 바바리안	Conan: The Barbarian , 1981	1983	청소년 관람불가
+10191	코난 2 - 디스트로이어	Conan The Destroyer , 1984	1986	PG
+10192	레드 소냐	Red Sonja , 1985	1985	PG-13
+10193	호소자 2	好小子II , Kung Fu Kids II , 1987	1987	NR
+10194	호소자 3 - 고아유랑기	The Kung Fu Kid Part 3 , 1988	1988	NR
+10195	호소자 4	Kung Fu Kid Part 4 , 1988	1988	NR
+10196	호소자 5	好小子 5 : 萬能運動員 , Kung Fu Kids Part V : The Adventure of Kung Fu Kids , 1988		NR
+10197	호소자 6	好小子 6 : 小龍過江 , Kung Fu Kids Part VI : Enter the Young Dragon , 1989	1989	NR
+10198	호소자 7 - 격투기 챔피언 아강			NR
+10199	겨울 여자	Winter Woman , 1977	1977	청소년 관람불가
+10200	터미네이터 2:오리지널	Terminator 2: Judgment Day , 1991	2019	15세 관람가
+10201	칵테일	Cocktail , 1988	1990	청소년 관람불가
+10202	이장호의 외인구단	Lee Jang-ho's Baseball Team , 1986	1986	12세 관람가
+10203	지존계상	至尊計狀 , No Risk, No Gain , 1990	1990	NR
+10204	컬러 오브 머니	The Color Of Money , 1986	1987	청소년 관람불가
+10205	그날 이후	The Day After , 1983		
+10206	벤자민 일등병	Private Benjamin , 1980		청소년 관람불가
+10207	갈매기의 꿈	Jonathan Livingston Seagull , 1973	1980	NR
+10208	자유부인	自由夫人 , Madame Freedom , 1956	2004	12세 관람가
+10209	어게인스트	Against All Odds , 1984	1984	청소년 관람불가
+10210	아파치	Fire Birds , 1990	1990	PG-13
+10211	스턴트맨의 음모	Viva Knievel! , Seconds To Live , 1977		PG
+10212	누구를 위하여 종은 울리나	For Whom The Bell Tolls , 1943	1957	12세 관람가
+10213	뮤직 박스	Music Box , 1989	1990	15세 관람가
+10214	도협	至尊無上 III - 睹俠 , God Of Gamblers II , 1990		15세 관람가
+10215	엠마뉴엘	Emmanuelle , 1974	1994	청소년 관람불가
+10216	레드 히트	Red Heat , 1988	1989	15세 관람가
+10217	로보캅	RoboCop , 1987	1987	15세 관람가
+10218	로보캅 2	Robocop 2 , 1990	1990	15세 관람가
+10219	메이저 리그	Major League , 1989	1989	12세 관람가
+10220	핑크 팬더	The Pink Panther , 1963		12세 관람가
+10221	핑크 팬더 2 - 어둠 속에 총성이	A Shot In The Dark , 1964		PG
+10222	핑크 팬더 3 - 돌아온 핑크 팬더	Return Of The Pink Panther , 1974		G
+10223	핑크 팬더 4 - 핑크 팬더의 역습	The Pink Panther Strikes Again , 1976	1978	PG
+10224	핑크 팬더 5 : 핑크 팬더의 복수	Revenge Of The Pink Panther , 1978		12세 관람가
+10225	핑크 팬더 6 - 핑크 팬더의 추적	Trail Of The Pink Panther , 1982		PG
+10226	핑크 팬더 7 - 핑크 팬더의 저주	Curse Of The Pink Panther , 1983		PG
+10227	형사 클루조	Inspector Clouseau , 1968		NR
+10228	나자리노	Nazareno Cruz Y El Lobo , Nazareno Cruz and the Wolf , 1974	1979	NR
+10229	화니 레이디	Funny Lady , 1975		NR
+10230	개 같은 내 인생	Mitt Liv Som Hund , My Life As A Dog , 1985	2018	15세 관람가
+10231	돈가방을 든 수녀	Nuns On The Run , 1990	1990	15세 관람가
+10232	그날이 오면	On The Beach , 1959	1962	12세 관람가
+10233	날개	Wings , 1927		NR
+10234	오멘 2	Damien: Omen II , 1978	1979	15세 관람가
+10235	남태평양	South Pacific , 1958		15세 관람가
+10236	스트리트 오브 파이어	Streets Of Fire , 1984	1984	PG
+10237	7년만의 외출	The Seven Year Itch , 1955	1957	15세 관람가
+10238	레인 맨	Rain Man , 1988	1989	12세 관람가
+10239	그대는 내 인생의 빛	You Light Up My Life , 1977		PG
+10240	황금 연못	On Golden Pond , 1981		PG
+10241	내츄럴	The Natural , 1984	1987	청소년 관람불가
+10242	더티 댄싱	Dirty Dancing , 1987	2007	15세 관람가
+10243	북북서로 진로를 돌려라	North By Northwest , 1959	1960	12세 관람가
+10244	늑대와 춤을	Dances With Wolves , 1990	1991	12세 관람가
+10245	다이 하드 2	Die Hard 2 , 1990	1990	15세 관람가
+10246	다크맨	Darkman , 1990	1990	15세 관람가
+10247	도마단	刀馬旦 , Peking Opera Blues , 1986	1993	15세 관람가
+10248	리오 브라보	Rio Bravo , 1959		NR
+10249	모던 타임즈	Modern Times , 1936	2015	전체 관람가
+10250	해리가 샐리를 만났을 때	When Harry Met Sally... , 1989	2016	15세 관람가
+10251	미지와의 조우	Close Encounters Of The Third Kind , 1977	1982	전체 관람가
+10252	배트맨	Batman , 1966		NR
+10253	배트맨	Batman , 1989	1990	15세 관람가
+10254	나의 길을 가련다	Going My Way , 1944		NR
+10255	노틀담의 꼽추	The Hunchback Of Notre Dame , 1923		NR
+10256	노틀담의 꼽추	The Hunchback Of Notre Dame , 1939	1948	NR
+10257	노틀담의 꼽추	Notre-Dame de Paris , The Hunchback Of Notre Dame , 1956	1957	12세 관람가
+10258	노틀담의 꼽추	The Hunchback Of Notre Dame , 1982		PG
+10259	베스트 키드	The Karate Kid , 1984	1985	12세 관람가
+10260	베스트 키드 2	The Karate Kid, Part II , 1986		PG
+10261	베스트 키드 3	The Karate Kid III , 1989		PG
+10262	델마와 루이스	Thelma & Louise , 1991	2017	청소년 관람불가
+10263	돌아오지 않는 강	River Of No Return , 1954	1955	15세 관람가
+10264	39 계단	The 39 Steps , 1935		12세 관람가
+10265	39 계단	The Thirty-Nine Steps , 1959	1960	15세 관람가
+10266	39 계단	The Thirty-Nine Steps , 1978		PG
+10267	삼총사	The Three Musketeers , 1948	1954	NR
+10268	뉴욕세남자와아기	3 Men And A Baby , 1987	1990	12세 관람가
+10269	마네킨	Mannequin , 1987	1987	청소년 관람불가
+10270	마네킨 2	Mannequin: On The Move , 1991	1991	12세 관람가
+10271	맨발의 청춘	The Barefooted Young , 1964	1964	15세 관람가
+10272	미드나잇 카우보이	Midnight Cowboy , 1969	1975	15세 관람가
+10273	스위치	Switch , 1991	1991	청소년 관람불가
+10274	엑설런트 어드벤쳐	Bill & Ted's Excellent Adventure , 1989	1989	PG
+10275	니키타	La Femme Nikita , Nikita , 1990	2016	15세 관람가
+10276	의문의 실종	Missing , 1982		PG
+10277	박쥐성의 무도회	The Fearless Vampire Killers Or Pardon Me, But Your Teeth Are In My Neck , 1967		NR
+10278	백야	White Nights , 1985	1986	PG-13
+10279	헨리 5세	Henry V , 1944	1952	NR
+10280	벤	Ben , 1972		PG
+10281	보디 히트	Body Heat , 1981	1982	청소년 관람불가
+10282	스탠 바이 미	Stand By Me , 1986	2014	청소년 관람불가
+10283	마농의 샘	Jean De Florette , 1986		15세 관람가
+10284	마농의 샘 2	Manon Des Sources , Manon Of The Spring , 1986	1992	12세 관람가
+10285	올 댓 재즈	All That Jazz , 1979		청소년 관람불가
+10286	뜨거운 것이 좋아	Some Like It Hot , 1959	1961	NR
+10287	로맨싱 스톤	Romancing The Stone , 1984	1984	15세 관람가
+10288	미니버 부인	Mrs. Miniver , 1942		NR
+10289	부베의 여인	La Ragazza Di Bube , Bebo's Girl , 1963		NR
+10290	부시맨	The Gods Must Be Crazy , 1980	1983	PG
+10291	부시맨 2	The Gods Must Be Crazy II , 1989	1989	12세 관람가
+10292	부시맨 4 - 크레이지 홍콩	香港也 狂: Crazy Hong Kong , 1993	1993	NR
+10293	불의 전차	Chariots Of Fire , 1981	2016	12세 관람가
+10294	브이 - 5부작 미니시리즈	V , 1983	1983	
+10295	빗 속의 방문객	Le Passage De La Pluie , Rider On The Rain , 1970		PG
+10296	사막의 라이온	Lion Of The Desert , 1981	1981	12세 관람가
+10297	부러진 화살	Broken Arrow , 1950		NR
+10298	복수	報仇 , Vengeance! , 1970	1970	NR
+10299	투씨	Tootsie , 1982	1983	전체 관람가
+10300	간디	Gandhi , 1982	1989	15세 관람가
+10301	시티 라이트	City Lights , 1931	2015	전체 관람가
+10302	나의 성공의 비밀	The Secret Of My Succe$s , 1987	1990	PG-13
+10303	괴물 디 오리지널	The Thing From Another World , 1951		NR
+10304	괴물	The Thing , 1982		청소년 관람불가
+10305	나이트호크	Nighthawks , 1981	1987	청소년 관람불가
+10306	프로젝트 A	A 計劃: , Project A , 1983	2015	15세 관람가
+10307	프로젝트A 2 : A계획 속집	A 計劃續集 , Project A II , 1987	2015	12세 관람가
+10308	드라큐라	Dracula , 1931		15세 관람가
+10309	너에게로 또다시	1990	1991	12세 관람가
+10310	마이키 이야기	Look Who's Talking , 1989	1990	15세 관람가
+10311	사랑의 행로	The Fabulous Baker Boys , 1989	1992	15세 관람가
+10312	똑바로 살아라	Do The Right Thing , 1989		청소년 관람불가
+10313	뜨거운 오후	Dog Day Afternoon , 1975		15세 관람가
+10314	마지막 황제	末代皇帝溥儀 , The Last Emperor , 1987	2015	12세 관람가
+10315	모정	Love Is A Many-Splendored Thing , 1955	1972	12세 관람가
+10316	미시시피 버닝	Mississippi Burning , 1988		청소년 관람불가
+10317	버디	Birdy , 1984		15세 관람가
+10318	7일간의 사랑	Man, Woman And Child , 1983	1987	PG
+10319	형사 조르당	Le Marginal , The Outsider , 1983		NR
+10320	사랑할 때와 이별할 때	Paroles Et Musique , Love Songs , 1984	1990	NR
+10321	살인광 시대	Monsieur Verdoux , 1947	2015	전체 관람가
+10322	소피의 선택	Sophie's Choice , 1982		15세 관람가
+10323	쉘부르의 우산	Les Parapluies De Cherbourg , The Umbrellas Of Cherbourg , 1964	2019	12세 관람가
+10324	메릴스트립의실크우드	Silkwood , 1983		청소년 관람불가
+10325	빗속의 병사	Soldier In The Rain , 1963		NR
+10326	사브리나	Sabrina , 1954	1956	15세 관람가
+10327				
+10328	서부 개척사	How The West Was Won , 1962	1966	NR
+10329	스카페이스	Scarface , 1932	2006	15세 관람가
+10330	스카페이스	Scarface , 1983	1984	청소년 관람불가
+10331	엘비라 마디간	Elvira Madigan , 1967	1990	PG
+10332	신의 아들	Son Of God , 1986	1986	청소년 관람불가
+10333	지상 최대의 작전	The Longest Day , 1962		전체 관람가
+10334	아라비아의 로렌스	Lawrence Of Arabia , 1962	1998	12세 관람가
+10335	석양의 무법자	Per qualche dollaro in piu , For A Few Dollars More , 1965	1967	12세 관람가
+10336	암흑가의 두 사람	Deux Hommes Dans La Ville , Two Men In Town , 1973	1993	NR
+10337	빌리티스	Bilitis , 1977	1988	청소년 관람불가
+10338	북경의 55일	55 Days At Peking , 1963		NR
+10339	프로토콜	Protocol , 1984		PG
+10340	흑인 오르페	Orfeu Negro , 1959		15세 관람가
+10341	위대한 독재자	The Great Dictator , 1940	2015	전체 관람가
+10342	3중대의 병사들	The Boys In Company C , 1978		청소년 관람불가
+10343	레베카	Rebecca , 1940	1954	15세 관람가
+10344	말타의 매	The Maltese Falcon , 1941		12세 관람가
+10345	무숙자	My Name Is Nobody , 1973	1976	NR
+10346	미시시피 마살라	Mississippi Masala , 1991		R
+10347	누가 버지니아 울프를 두려워하랴	Who's Afraid Of Virginia Woolf , 1966		12세 관람가
+10348	벨테네브로스	Beltenebros , Prince Of Shadows , 1991		
+10349	황야의 7인	The Magnificent Seven , 1960	1962	NR
+10350	성조기의 행진	Yankee Doodle Dandy , 1942		NR
+10351	베드룸 윈도우	The Bedroom Window , 1987	1987	청소년 관람불가
+10352	세 남자와 아기 2	3 Men And A Little Lady , 1990	1991	PG
+10353	시민 케인	Citizen Kane , 1941		15세 관람가
+10354	아리랑	1926	1926	NR
+10355	블루문 특급 - 파일롯	Moonlighting , 1985		15세 관람가
+10356	아침의 영광	Morning Glory , 1933		NR
+10357	어느날 밤에 생긴 일	It Happened One Night , 1934		15세 관람가
+10358	애니 홀	Annie Hall , 1977		PG
+10359	브로드캐스트 뉴스	Broadcast News , 1987	1988	15세 관람가
+10360	사의 찬미	死의 讚美: Death Song , 1991	1991	15세 관람가
+10361	서부 전선 이상 없다	All Quiet On The Western Front , 1930		
+10362	소오강호	笑傲江湖 , Swordsman , 1990	1990	12세 관람가
+10363	신사는 금발을 좋아한다	Gentlemen Prefer Blondes , 1953	1955	15세 관람가
+10364	셰넌도어	Shenandoah , 1965		NR
+10365	철십자 훈장	Cross Of Iron , 1977	1978	청소년 관람불가
+10366	아틱 히트	Artic Heat , Born American , 1986	1986	청소년 관람불가
+10367	서스피션	Suspicion , 1941		15세 관람가
+10368	사운더	Sounder , 1972		G
+10369	사이공	Saigon , Off Limits , 1988	1989	NR
+10370	아이큐 제로	Les Sous-Doues , 1980	1990	15세 관람가
+10371	브룩클린으로 가는 마지막 비상구	Last Exit To Brooklyn , 1989	1990	청소년 관람불가
+10372	빗나간 모정	Wife, Mother, Murderer: The Marie Hilley Story , 1991		
+10373	스타 이즈 본 디 오리지널	A Star Is Born , 1937		12세 관람가
+10374	스타 탄생	A Star Is Born , 1954		PG
+10375	아미티빌의 저주	The Amityville Horror , 1979	1981	청소년 관람불가
+10376	아미티빌 2	Amityville II: The Possession , 1982		청소년 관람불가
+10377	아미티빌 3	Amityville 3-D , Amityville III: The Demon , 1983		PG
+10378	알제리 전투	La Battaglia Di Algeri , The Battle Of Algiers , 1966	2009	15세 관람가
+10379	어둠 속에 벨이 울릴 때	Play Misty For Me , 1971		청소년 관람불가
+10380	애정은 강물처럼	Blossoms In The Dust , 1941		NR
+10381	에덴의 동쪽	East Of Eden , 1955	1957	15세 관람가
+10382	어벤저	Kickboxer , 1989	1989	15세 관람가
+10383	북경 익스프레스	Peking Express , 1951		NR
+10384	여로	The Journey , 1959	1959	NR
+10385	우리에게 내일은 없다	Bonnie And Clyde , 1967		청소년 관람불가
+10386	열정	St. Elmo's Fire , 1985		청소년 관람불가
+10387	아 카르멜라	I Ay, Carmela! , 1990		NR
+10388	워킹 걸	Working Girl , 1988	1990	청소년 관람불가
+10389	양철북	Die Blechtrommel , The Tin Drum , 1979	1988	청소년 관람불가
+10390	크로커다일 던디	'Crocodile' Dundee , 1986	1987	15세 관람가
+10391	크로커다일 던디 2	'Crocodile' Dundee II , 1988	1990	NR
+10392	나일의 대모험	The Jewel Of The Nile , 1985	1991	12세 관람가
+10393	객도추한	客途秋恨: Autumnal Lament In Exile , 1990		NR
+10394	그리스도 최후의 유혹	The Last Temptation Of Christ , 1988	2002	청소년 관람불가
+10395	플래시댄스	Flashdance , 1983	1983	청소년 관람불가
+10396	피라미드의 공포	Young Sherlock Holmes , 1985	1988	PG-13
+10397	남부군	南部軍 , North Korean Partisan In South Korea , 1990	1990	15세 관람가
+10398	낯선 사람과 춤을	Dance With A Stranger , 1985		청소년 관람불가
+10399	에프 엑스	FX: Murder By Illusion , 1986	1986	15세 관람가
+10400	킹콩	King Kong , 1933	1957	NR
+10401	비버리 힐스 캅	Beverly Hills Cop , 1984	1985	15세 관람가
+10402	비버리 힐스 캅 2	Beverly Hills Cop II , 1987	1989	15세 관람가
+10403	네트워크	Network , 1976		15세 관람가
+10404	성난 황소	Raging Bull , 1980		15세 관람가
+10405	라임라이트	Limelight , 1952	1989	NR
+10406	서울 무지개	Seoul Rainbow , 1989	1989	청소년 관람불가
+10407	선샤인	Sunshine , 1973	1978	
+10408	신의 아그네스	Agnes Of God , 1985	1987	15세 관람가
+10409	작은 신의 아이들	Children Of A Lesser God , 1986	1987	15세 관람가
+10410	드라이빙 미스 데이지	Driving Miss Daisy , 1989	1990	전체 관람가
+10411	레비아탄	Leviathan , 1989	1989	15세 관람가
+10412	레이디호크	Ladyhawke , 1985	1986	15세 관람가
+10413	로빈슨 가족	The Adventures Of The Wilderness Family , 1975		G
+10414	맥아더	MacArthur , 1977	1977	15세 관람가
+10415	쇼처럼 즐거운 인생은 없다	There's No Business Like Show Business , 1954	1956	15세 관람가
+10416	스테잉 얼라이브	Staying Alive , 1983		15세 관람가
+10417	변강쇠	Byun Kang-swoi , 1986	1986	청소년 관람불가
+10418	뽕	Mulberry , 1985	1986	청소년 관람불가
+10419	산딸기	Mountain Strawberries , 1982	1982	청소년 관람불가
+10420	장군의 아들	The General's Son , 1990	1990	15세 관람가
+10421	씨받이	The Surrogate Womb , 1986	1987	청소년 관람불가
+10422	어우동	Eoh Wu-dong , 1985	1985	청소년 관람불가
+10423	바보 선언	Declaration Of Idiot , 1983	1984	청소년 관람불가
+10424	삼손과 데릴라	Samson And Delilah , 1949	1955	12세 관람가
+10425	성 리수일뎐	Lee Su-il Story , 1987	1987	청소년 관람불가
+10426	수업료	授業料 , 1940	1940	NR
+10427	야성의 엘자	Born Free , 1966		PG
+10428	애정과 욕망	Carnal Knowledge , 1971		청소년 관람불가
+10429	엔젤 하트	Angel Heart , 1987	1989	청소년 관람불가
+10430	역마차	Stagecoach , 1939	1952	
+10431	영광의 탈출	Exodus , 1960	1966	15세 관람가
+10432	아빠는 출장 중	Otac Na Sluzbenom Putu , When Father Was Away On Business , 1985	1988	NR
+10433	해바라기	I Girasoli , Sunflower , 1970	1982	15세 관람가
+10434	영혼은 그대 곁에	Always , 1989		15세 관람가
+10435	예스 마담 - 황가사저	皇家師姐: Yes, Madam , 1985	2014	청소년 관람불가
+10436	알 카포네	Al Capone , 1959		NR
+10437	5인의 탐정가	Murder By Death , 1976		PG
+10438	영혼의 목걸이	Shocker , 1989	1989	15세 관람가
+10439	닌자 거북이	Teenage Mutant Ninja Turtles , 1990	2014	전체 관람가
+10440	취권	醉拳 , Drunken Master , 1978	1979	12세 관람가
+10441	성룡의 미라클	奇蹟: Mr Canton And Lady Rose , Miracle , 1989	2014	NR
+10442	새벽의 7인	Operation Daybreak , 1975	1979	PG
+10443	실베스타 스텔론의 탈옥	Lock Up , 1989	1989	12세 관람가
+10444	매시	MASH , 1970	1971	전체 관람가
+10445	등대여명	等待黎明: Hong Kong 1941 , 1984	1990	NR
+10446	마유미	Mayumi: Virgin Terrorist , 1990	1990	청소년 관람불가
+10447	알파벳 도시	Alphabet City , 1984		NR
+10448	오즈의 마법사	The Wizard Of Oz , 1939	2012	전체 관람가
+10449	산 파블로	The Sand Pebbles , 1966		NR
+10450	총알탄 사나이	The Naked Gun: From The Files Of Police Squad! , 1988	1990	청소년 관람불가
+10451	총알탄 사나이 2	The Naked Gun 2 1/2: The Smell Of Fear , 1991	1991	15세 관람가
+10452	열차 안의 낯선 자들	Strangers On A Train , 1951	1959	12세 관람가
+10453	졸업	The Graduate , 1967	2020	15세 관람가
+10454	사랑을 위하여	Dying Young , 1991	1991	15세 관람가
+10455	상처 뿐인 영광	Somebody Up There Likes Me , 1956		NR
+10456	에밀 졸라의 생애	The Life of Emile Zola , 1937		
+10457	여정	Summertime , 1955		NR
+10458	실버 스트릭	Silver Streak , 1976	1977	15세 관람가
+10459	오메가 맨	The Omega Man , 1971		PG
+10460	영광의 계단	Unconquered , 1989		
+10461	오클라호마 유전	Oklahoma Crude , 1973		PG
+10462	올리버	OLIVER , 1968	1971	15세 관람가
+10463	시머론	Cimarron , 1931		NR
+10464	완다라는 이름의 물고기	A Fish Called Wanda , 1988		청소년 관람불가
+10465	야수의 최후	Que La Bete Meure , The Beast Must Die , 1969	2003	NR
+10466	우연한 방문객	The Accidental Tourist , 1988		15세 관람가
+10467	연산군	Prince Yeonsan , 1961	1962	
+10468	연산군	燕山君: Prince Yeon-san , 1987	1987	NR
+10469	옛날 옛적 서부에서	C'Era Una Volta Il West , Once Upon A Time In The West , 1968	1970	15세 관람가
+10470	전함 포템킨	The Battleship Potemkin , Bronenosets Potemkin , 1925	1994	15세 관람가
+10471	제3의 사나이	The Third Man , 1949	1954	15세 관람가
+10472	은행털이와 아빠와 나	Les Fugitifs , 1986	1990	NR
+10473	장미의 이름	Le Nom De La Rose , The Name Of The Rose , 1986	1989	청소년 관람불가
+10474	알파빌	Alphaville, Une Etrange Aventure De Lemmy Caution , Alphaville, A Strange Adventure Of Lemmy Caution , 1965		NR
+10475				
+10476	잠복근무	Stakeout , 1987		청소년 관람불가
+10477	아나스타샤	Anastasia: The Mystery Of Anna , 1986		15세 관람가
+10478	젊은이의 양지	A Place In The Sun , 1951	1953	15세 관람가
+10479	붉은 수수밭	紅高梁 , Red Sorghum , 1988	1989	NR
+10480	전망 좋은 방	A Room With A View , 1985	1989	15세 관람가
+10481	열혈천사	紅粉兵團 , Golden Queen's Commando , 1982	1991	NR
+10482	차타레 부인의 사랑	Lady Chatterley's Lover , 1981	2019	청소년 관람불가
+10483	복수무정 2	Out For Justice , 1991		R
+10484	과거로부터	Out Of The Past , 1947		NR
+10485	나의 계곡은 푸르렀다	How Green Was My Valley , 1941		12세 관람가
+10486	매춘	賣春 , Prostitution , 1988	1988	청소년 관람불가
+10487	미궁 속의 알리바이	Her Alibi , 1989		PG
+10488	미드나잇 런	Midnight Run , 1988	1990	청소년 관람불가
+10489	미져리	Misery , 1990	1991	청소년 관람불가
+10490	세븐 싸인	The Seventh Sign , 1989	1989	12세 관람가
+10491	우먼 인 레드	The Woman In Red , 1984	1989	15세 관람가
+10492	모두가 대통령의 사람들	All The President's Men , 1976		PG
+10493	왕과 나	The King And I , 1956	1957	전체 관람가
+10494	여학생	L'Etudiante , The Student , 1988	1989	NR
+10495	영광의 길	Paths Of Glory , 1957		NR
+10496	18 어게인	18 Again! , 1988	1989	NR
+10497	멋진 인생	It's A Wonderful Life , 1946		15세 관람가
+10498	야외 소동	The Great Outdoors , 1988		PG
+10499	저 하늘에 태양이	The Other Side Of The Mountain , 1975	1979	PG
+10500	도성대형 2 - 지존무적	睹城大亨II 之 至尊無敵: Casino Tycoon II , 1992		NR
+10501	지옥의 묵시록	Apocalypse Now , 1979	2018	청소년 관람불가
+10502	비 오는 날 수채화	A Sketch Of A Rainy Day , 1989	1990	15세 관람가
+10503	콘돌	Three Days Of The Condor , 1975	1989	청소년 관람불가
+10504	양들의 침묵	The Silence Of The Lambs , 1991	1991	청소년 관람불가
+10505	은행풍운	人民英雄: People's Hero , 1987		NR
+10506	알파 인시던트	The Alpha Incident , 1978		PG
+10507	젊은 날의 처칠	Young Winston , 1972		PG
+10508	성춘향	1961	1961	12세 관람가
+10509	성춘향	成春香: Sung Chun-Hyang , 1987	1987	12세 관람가
+10510	성춘향전	成春香傳 , 1976	1976	전체 관람가
+10511	우리 집의 낙원	You Can't Take It With You , 1938	1946	전체 관람가
+10512	벤지	Benji , 1974	1976	G
+10513	알피	Alfie , 1966		NR
+10514	태양은 가득히	Plein Soleil , Purple Noon , 1960	2004	12세 관람가
+10515	취권 3	醉拳 III: Drunken Master III , 1994		15세 관람가
+10516	개인 교수	Private Lessons , 1981		청소년 관람불가
+10517	비열한 거리	Mean Streets , 1973		청소년 관람불가
+10518	비황	秘煌 , 1992	1992	청소년 관람불가
+10519	붉은 10월	The Hunt For Red October , 1990	1990	PG
+10520	작은 사랑의 멜로디	Melody , 1971	1994	전체 관람가
+10521	블랙 레인	Black Rain , 1989	1990	청소년 관람불가
+10522	빙점 81	氷点 '81: 前後完結篇 , Freezing Point , 1981	1981	12세 관람가
+10523	브레이크아웃	Breakout , 1975	1977	PG
+10524	1941	1979	1980	PG
+10525	시에라 마드레의 보석	The Treasure Of The Sierra Madre , 1948		12세 관람가
+10526	블러드 심플	Blood Simple , 1984	2019	15세 관람가
+10527	사랑을 합시다	Let's Make Love , 1960	1961	12세 관람가
+10528	왕과 새	Le Roi Et L'Oiseau , The King And The Mockingbird , 1980		NR
+10529	불타는 태양	Tequila Sunrise , 1988		청소년 관람불가
+10530	비정	My Foolish Heart , 1949		NR
+10531	크레이지 걸	One Crazy Summer , 1986		PG
+10532	불가사리	Tremors , 1990	1990	PG-13
+10533	니콜라스와 알렉산드라	Nicholas And Alexandra , 1971		PG
+10534	골치 아픈 여자	Ruthless People , 1986		청소년 관람불가
+10535	드라큐라	Dracula , 1979	1986	15세 관람가
+10536	드라큐라	Dracula , 1973		
+10537	용적심	龍的心 , Heart Of Dragon , 1985	2015	15세 관람가
+10538	마이 튜터	My Tutor , 1983	1983	청소년 관람불가
+10539	베스트 오브 더 베스트	Best Of The Best , 1989	1990	PG-13
+10540	모스크바는 눈물을 믿지 않는다	Moskva slezam ne verit , Moscow Does Not Believe In Tears , 1980	1988	15세 관람가
+10541	미스터 마마	Mr. Mom , 1983		PG
+10542	새티스팩션	Satisfaction , 1988		15세 관람가
+10543	프로페셔널	Le Professionnel , 1981		NR
+10544	들판을 달리는 산토끼	La Course Du Lievre A Travers Les Champs , And Hope To Die , 1972		NR
+10545	지존무상	至尊無上: Casino Raiders , 1989	1989	NR
+10546	아비정전	阿飛正傳 , Days Of Being Wild , 1990	2017	15세 관람가
+10547	조찬 클럽	The Breakfast Club , 1985		15세 관람가
+10548	제트	Z , 1969	1989	PG
+10549	쟈니 핸섬	Johnny Handsome , 1989	1990	청소년 관람불가
+10550	복수의 총탄	Instant Justice , 1987		청소년 관람불가
+10551	라스트 콘서트	Dedicato A Una Stella , The Last Concert, Stella , 1976	1977	NR
+10552	가장 위험한 해	The Year Of Living Dangerously , 1983		12세 관람가
+10553	나 홀로 사막에	Dirkie , Lost In The Desert , 1969		NR
+10554	정글 속의 고릴라	Gorillas In The Mist: The Story Of Dian Fossey , 1988		PG-13
+10555	오발탄	誤發彈 , An Aimless Bullet , 1961	1961	15세 관람가
+10556	필사의 추적	Blow Out , 1981		청소년 관람불가
+10557	왕이여 안녕	Farewell To The King , 1989		PG-13
+10558	영환도사	靈幻道士	1987	NR
+10559	나의 길	Waga Michi , 1974		NR
+10560	노 머시	No Mercy , 1986	1987	청소년 관람불가
+10561	대부 3	Mario Puzo's The Godfather Part III , 1990	1991	청소년 관람불가
+10562	마지막 지하철	Le Dernier Metro , The Last Metro , 1980		PG
+10563	웨스트 사이드 스토리	West Side Story , 1961	1999	전체 관람가
+10564	비정성시	悲情城市: A City Of Sadness , 1989	1990	12세 관람가
+10565	사랑의 미로	Eu Sei Que Vou Te Amar , 1986		NR
+10566	이유없는 반항	Rebel Without A Cause , 1955	1999	전체 관람가
+10567	야행	Night Voyage , 1977	1977	15세 관람가
+10568	베를린 천사의 시	Der Himmel Ueber Berlin , Wings Of Desire , 1987	1993	전체 관람가
+10569	인생의 반전	Big Business , 1988		PG
+10570	그린 카드	Green Card , 1990	1991	15세 관람가
+10571	프로테우스4	Demon Seed , 1977		R
+10572	애마부인	愛麻夫人 , Madam Aema , 1982	1982	청소년 관람불가
+10573	애마부인 2	Madame Ae-ma 2 , 1984	1984	청소년 관람불가
+10574	애마부인 3	Ae-ma Woman 3 , 1985	1985	청소년 관람불가
+10575	작은 아씨들	Little Women , 1933		NR
+10576	인터멧조	Intermezzo: A Love Story , 1939		NR
+10577	정글의 여인	Dance Of The Dwarfs , 1984		PG
+10578	제너럴	The General , 1926		전체 관람가
+10579	살바도르	Salvador , 1986	1988	청소년 관람불가
+10580	전쟁과 평화	War And Peace , 1956	1987	12세 관람가
+10581	전쟁과 평화 4부	Voyna I Mir IV: Pierre Bezukhov , 1967		NR
+10582	줄리아	Julia , 1977		PG
+10583	제일유형위험	第一類型危險: Dangerous Encounters Of The First Kind , 1980		NR
+10584	위대한 개츠비	The Great Gatsby , 1974	1976	PG
+10585	위대한 지그펠드	The Great Ziegfeld , 1936	1946	12세 관람가
+10586	분노의 포도	The Grapes Of Wrath , 1940		12세 관람가
+10587	가족	Immediate Family , 1989		PG-13
+10588	수잔 브링크의 아리랑	Susan Brink's Arirang , 1991	1991	15세 관람가
+10589	접시꽃 당신	You My Rose Mellow , 1988	1988	청소년 관람불가
+10590	제17 포로수용소	Stalag 17 , 1953	1961	12세 관람가
+10591	오베르왈드의 비밀	Il Mistero Di Oberwald , The Mystery Of Oberwald , 1980		NR
+10592	지붕 위의 바이올린	Fiddler On The Roof , 1971	1974	G
+10593	지상에서 영원으로	From Here To Eternity , 1953	1957	전체 관람가
+10594	마지막 홈런	Amos , 1985		
+10595	미워도 다시 한번 1부	Love Me Once Again , 1968	1968	12세 관람가
+10596	페노미나	Phenomena , 1985	1989	청소년 관람불가
+10597	네레트바 전투	Bitka Na Neretvi , The Battle Of Neretva , 1970		G
+10598	당통	Danton , 1982		PG
+10599	나쁜 피	Mauvais Sang , Bad Blood , 1986	1994	15세 관람가
+10600	빅	Big , 1988	1989	12세 관람가
+10601	버스 정류장	Bus Stop , 1956	1960	청소년 관람불가
+10602	백만장자와 결혼하는 법	How To Marry A Millionaire , 1953		12세 관람가
+10603	레전드	Legend , 1985		15세 관람가
+10604	카사블랑카여, 다시 한번	Play It Again, Sam , 1972		PG
+10605	천국의 문	Heaven's Gate , 1980	1980	15세 관람가
+10606	정글 피버	Jungle Fever , 1991		청소년 관람불가
+10607	웨스트 포인트	The Long Gray Line , 1955		NR
+10608	젊은 날의 초상	Portrait Of The Days Of Youth , 1990	1991	청소년 관람불가
+10609	7인의 사무라이	七人の侍 , Seven Samurai , 1954	2004	NR
+10610	새엄마는 외계인	My Stepmother Is An Alien , 1988	1991	PG-13
+10611	젠다성의 포로	The Prisoner Of Zenda , 1937		NR
+10612	젠다성의 포로	The Prisoner Of Zenda , 1952		NR
+10613	젠다성의 포로	The Prisoner Of Zenda , 1979		PG
+10614	캠퍼스 군단	Toy Soldiers , 1991	1991	청소년 관람불가
+10615	커미트먼트	The Commitments , 1991		청소년 관람불가
+10616	전쟁의 루머	A Rumor Of War , 1980		
+10617	그레이스토크	Greystoke: The Legend Of Tarzan, Lord Of The Apes , 1984	1985	PG
+10618	원한의 도곡리 다리	The Bridges At Toko-Ri , 1954		NR
+10619	윌로우	Willow , 1988	1990	전체 관람가
+10620	이어 오브 드래곤	Manhattan Sur , Year Of The Dragon , 1985	1985	청소년 관람불가
+10621	이창	Rear Window , 1954	1957	15세 관람가
+10622	브레이크하트 패스	Breakheart Pass , 1976		PG
+10623	잃어버린 전주곡	Five Easy Pieces , 1970		R
+10624	천국보다 낯선	Stranger Than Paradise , 1984	2017	15세 관람가
+10625	상하이 블루스	上海之夜 , Shanghai Blues , 1984		청소년 관람불가
+10626	첩혈가두	牒血街頭 , Bullet In The Head , 1990	2015	15세 관람가
+10627	촉산	蜀山 , THE WARRIORS FROM THE MAGIC MOUNTAIN , 1983	2015	전체 관람가
+10628	제저벨	Jezebel , 1938		NR
+10629	크레이머 대 크레이머	Kramer Vs. Kramer , 1979	1980	12세 관람가
+10630	7월 4일생	Born On The Fourth Of July , 1989	1990	15세 관람가
+10631	코미디의 왕	The King Of Comedy , 1983		15세 관람가
+10632	태양의 전사들	The Blood Of Heroes , 1988		청소년 관람불가
+10633	천국의 유령	Phantom Of The Paradise , 1974		PG
+10634	코브라	Cobra , 1986	1987	청소년 관람불가
+10635	사계의 사나이	A Man For All Seasons , 1966		G
+10636	태양의 제국	Empire Of The Sun , 1987	1989	PG
+10637	정오의 출격	Twelve O'Clock High , 1949		12세 관람가
+10638	천금을 마다한 사나이	Mr. Deeds Goes To Town , 1936	2004	NR
+10639	마돈나의 수잔을 찾아서	Desperately Seeking Susan , 1985		PG-13
+10640	좋은 친구들	Goodfellas , 1990	1991	청소년 관람불가
+10641	텍사스 전기톱 학살	The Texas Chain Saw Massacre , 1974		청소년 관람불가
+10642	새턴 3	Saturn 3 , 1980		청소년 관람불가
+10643	커튼 클럽	The Cotton Club , 1984	1985	청소년 관람불가
+10644	톰 존스의 화려한 모험	Tom Jones , 1963		NR
+10645	트윈스	Twins , 1988	1989	12세 관람가
+10646	도어즈	The Doors , 1991	1993	청소년 관람불가
+10647	특전 유보트	Das Boot , The Boat , 1981	1982	15세 관람가
+10648	타잔 - 조크 마호니 편 1	Tarzan Goes To India , 1962		NR
+10649	복카치오 91	1991	1991	청소년 관람불가
+10650	홀리데이 킬러	Tentacles , 1977	1977	PG
+10651	실버라도	Silverado , 1985	1986	PG-13
+10652	추억	The Way We Were , 1973		12세 관람가
+10653	달세계 여행	Le Voyage Dans La Lune , A Trip To The Moon , 1902		NR
+10654	2010 우주 여행	2010 , 1984		PG
+10655	브레이킹	Breakin' , 1984		PG
+10656	나의 사랑 나의 신부	My Love, My Bride , 1990	1990	15세 관람가
+10657	적과의 동침	Sleeping With The Enemy , 1991	1991	청소년 관람불가
+10658	데이트 소동	Blind Date , 1987		청소년 관람불가
+10659	겨울 여자 2	Winter Woman Part II , 1982	1983	청소년 관람불가
+10660	마이 페어 레이디	My Fair Lady , 1964		15세 관람가
+10661	몽중인	夢中人: The Dream Lovers , 1986	1989	NR
+10662	방랑자	The Tramp , 1915		
+10663	복수무정	Hard To Kill , 1990	1990	청소년 관람불가
+10664	블랙 문 라이징	Black Moon Rising , 1986		청소년 관람불가
+10665	비처럼 음악처럼	1992	1992	15세 관람가
+10666	캣츠 아이	Cat's Eye , 1985		PG-13
+10667	사랑의 종소리	The Father Clements Story , 1987		
+10668	일요일은 참으세요	Pote Tin Kyriaki , Never On Sunday , 1960		12세 관람가
+10669	인어 공주	The Little Mermaid , 1989	1997	전체 관람가
+10670	천녀유혼	倩女幽魂 , A Chinese Ghost Story , 1987	2019	12세 관람가
+10671	위기의 암호명	Jumpin' Jack Flash , 1986		청소년 관람불가
+10672				
+10673	챔프	The Champ , 1931		NR
+10674	걸 스크리머	Girls School Screamers , 1986		R
+10675	파리는 안개에 젖어	La Maison Sous Les Arbres , The House Under The Trees , 1971		PG
+10676	타이페이 스토리	靑梅竹馬 , Taipei Story , 1985	2019	15세 관람가
+10677	패튼 대전차 군단	Patton , 1970	1971	15세 관람가
+10678	종합병원	The Hospital , 1971		PG
+10679	포스트맨은 벨을 두 번 울린다	The Postman Always Rings Twice , 1981	1982	청소년 관람불가
+10680	제7의 봉인	Det Sjunde Inseglet , The Seventh Seal , 1957	2012	12세 관람가
+10681	특종 기사	The Front Page , 1931		NR
+10682	특종 기사	The Front Page , 1974		PG
+10683	사랑의 용기	Shining Through , 1992	1992	청소년 관람불가
+10684	2001 스페이스 오디세이	2001: A Space Odyssey , 1968		12세 관람가
+10685	청춘 낙서	American Graffiti , 1973		PG
+10686	천녀유혼 2 - 인간도	女幽魂 II: 人間道 , A Chinese Ghost Story II: The Story Continues... , 1990	2015	12세 관람가
+10687	국제 첩보국	The Ipcress File , 1965		
+10688	뻐꾸기 둥지 위로 날아간 새	One Flew Over The Cuckoo's Nest , 1975	1977	15세 관람가
+10689	사랑과 추억	The Prince Of Tides , 1991	1992	청소년 관람불가
+10690	천사와 사랑을	Date With An Angel , 1987	1988	PG
+10691	로보 런어웨이	Runaway , 1984		PG-13
+10692	7일간의 외출	Une Semaine De Vacances , A Week's Vacation , 1980		NR
+10693	이너스페이스	Innerspace , 1987		PG
+10694	차이나 신드롬	The China Syndrome , 1979		12세 관람가
+10695	사랑과 슬픔의 맨하탄	Q & A , 1990	1991	청소년 관람불가
+10696	블랙 썬데이	Black Sunday , 1977	1992	15세 관람가
+10697	컬러 퍼플	The Color Purple , 1985	1986	15세 관람가
+10698	칼의 고백	Cal , 1984		
+10699	탐욕	Greed , 1925		NR
+10700	마지막 보이 스카웃	The Last Boy Scout , 1991	1991	청소년 관람불가
+10701	파리에서의 마지막 탱고	Last Tango In Paris , 1972	1996	청소년 관람불가
+10702	프라하의 봄	The Unbearable Lightness Of Being , 1988	1989	청소년 관람불가
+10703	종착역	Stazione Termini , Terminal Station , 1953		NR
+10704	젊은 사자들	The Young Lions , 1958		NR
+10705	검찰 측 증인 디 오리지널	Witness for the Prosecution , 1957		12세 관람가
+10706	샌프란시스코에서 하룻밤	Dogfight , 1991		15세 관람가
+10707				
+10708	파리 대왕	Lord Of The Flies , 1990	1992	15세 관람가
+10709	오지의 미녀	Outback Bound , 1988		
+10710	파리 텍사스	Paris, Texas , 1984	1987	15세 관람가
+10711	THX-1138	THX-1138 , 1971		PG
+10712	애마부인 4	Madame Emma 4 , 1990	1990	청소년 관람불가
+10713	애마부인 5	Madame Emma 5 , 1991	1991	청소년 관람불가
+10714	애마부인 6	Madame Emma 6 , 1991	1992	청소년 관람불가
+10715	죽음의 만우절	April Fool's Day , 1986		청소년 관람불가
+10716	코러스 라인	A Chorus Line , 1985	1988	12세 관람가
+10717	특근	After Hours , 1985		청소년 관람불가
+10718	월 스트리트	Wall Street , 1987	1988	15세 관람가
+10719	용감한 변호사	...And Justice For All , 1979		R
+10720	아빠를 업고 학교에 가다	Going Back To School With My Dad On My Back , 1998		전체 관람가
+10721	더티 해리	Dirty Harry , 1971	1972	청소년 관람불가
+10722	더티 해리 2 - 이것이 법이다	Magnum Force , 1973	1977	청소년 관람불가
+10723	더티 해리 3 - 집행자	The Enforcer , 1976	1979	청소년 관람불가
+10724	더티 해리 4 - 써든 임팩트	Sudden Impact , 1983	1984	청소년 관람불가
+10725	더티 해리 5 - 추적자	The Dead Pool , 1988		15세 관람가
+10726	48시간	48 Hrs. , 1982	1983	청소년 관람불가
+10727	48시간 2	Another 48 Hrs. , 1990	1990	청소년 관람불가
+10728	행운의 반전	Reversal Of Fortune , 1990		15세 관람가
+10729	집시의 시간	Dom Za Vesanje , Time Of The Gypsies , 1989	1993	청소년 관람불가
+10730	밤비	Bambi , 1942		
+10731	비치 바니즈	Buford's Beach Bunnies , 1993	1993	청소년 관람불가
+10732	괴짜들의 병영 일지	Stripes , 1981		R
+10733	자전거를 타고 온 연인	1991	1992	15세 관람가
+10734	내일을 향해 쏴라 2	Butch And Sundance: The Early Days , 1979		PG
+10735	나이트메어 2 - 프레디의 복수	A Nightmare On Elm Street Part 2: Freddy's Revenge , 1985	1987	청소년 관람불가
+10736	나이트메어 3 - 꿈의 전사	A Nightmare On Elm Street 3: Dream Warriors , 1987	1987	청소년 관람불가
+10737	나이트메어 4 - 꿈의 지배자	A Nightmare On Elm Street 4: The Dream Master , 1988	1989	15세 관람가
+10738	나이트메어 5 - 꿈꾸는 아이들	A Nightmare On Elm Street: The Dream Child , 1989	1990	청소년 관람불가
+10739	나이트메어 6 - 프레디 죽다	Freddy's Dead: The Final Nightmare , 1991	1992	청소년 관람불가
+10740	JFK	JFK , 1991	1992	15세 관람가
+10741	연인	L'Amant , The Lover , 1992	2016	청소년 관람불가
+10742	원초적 본능	Basic Instinct , 1992	1992	청소년 관람불가
+10743	몬트리올 예수	Jesus De Montreal , Jesus Of Montreal , 1989		15세 관람가
+10744	불을 찾아서	La Guerre Du Feu , Quest For Fire , 1981	1991	청소년 관람불가
+10745	비목	碑木 , 1978	1979	전체 관람가
+10746	폴리스 스토리	警察故事 , Police Story , 1985	2015	12세 관람가
+10747	파리 애마	Paris Emma , 1988	1988	청소년 관람불가
+10748	붉은 사막	Il Deserto Rosso , Red Desert , 1964		NR
+10749	하워드 덕	Howard The Duck , 1986		PG
+10750	반달 거리	Half Moon Street , 1986		청소년 관람불가
+10751	블루 라군	The Blue Lagoon , 1980	1988	청소년 관람불가
+10752	비밀 문서 소동	The Adventure Of Sherlock Holmes' Smarter Brother , 1975		PG
+10753	물방울	The Blob , 1958		
+10754	사랑의 파도	Sea Of Love , 1989	1990	청소년 관람불가
+10755	미스터 부 - 귀마쌍성	Games Gamblers Play , 1974		NR
+10756	소울 맨	Soul Man , 1986		PG-13
+10757	적 그리고 사랑 이야기	Enemies: A Love Story , 1989	1990	R
+10758	아이다호	My Own Private Idaho , 1991	1991	청소년 관람불가
+10759	페임	Fame , Fame: The Original Movie , 1980		15세 관람가
+10760	고양이	What's New, Pussycat , 1965		NR
+10761	나이아가라	Niagara , 1953	1955	NR
+10762	달마가 동쪽으로 간 까닭은?	Why Has Bodhi-Dharma Left For The East? , 1989	1989	전체 관람가
+10763	캐논볼 2	Cannonball Run II , 1984		PG
+10764	기쁜 우리 젊은 날	Our Joyful Young Days , 1987	1987	12세 관람가
+10765	공군 대전략	Battle Of Britain , 1969		G
+10766	캐디쉑 2	Caddyshack II , 1988		PG
+10767	사랑의 기적	Awakenings , 1990	1991	전체 관람가
+10768	배트 21	Bat 21 , 1988	1989	15세 관람가
+10769	필사의 도전	The Right Stuff , 1983		12세 관람가
+10770	수전지대	1968	1968	NR
+10771	가을 날의 동화	秋天的童話: An Autumn's Tale , 1987	1989	
+10772	극지방의 위기	Polarized , 2007		
+10773	프랭키와 자니	Frankie And Johnny , 1966		NR
+10774	로라	Laura , 1944		15세 관람가
+10775	프랭키와 쟈니	Frankie And Johnny , 1991	1992	청소년 관람불가
+10776	용사들을 위하여	For The Boys , 1991		R
+10777	하타리	Hatari! , 1962	1964	15세 관람가
+10778	아이들의 왕	孩子王 , King Of The Children , 1987		NR
+10779	골든 차일드	The Golden Child , 1986		PG-13
+10780	연지구	'月+因'脂拘 , Rouge , 1987		NR
+10781	애들이 줄었어요	Honey, I Shrunk The Kids , 1989	1990	
+10782	1900년	Novecento , 1976		청소년 관람불가
+10783	반도레로	Bandolero! , 1968	1969	PG
+10784	비루먹은 말을 봐라	Behold A Pale Horse , 1964		NR
+10785	로니 브레이브	Lonely Are The Brave , 1962		NR
+10786	소유와 무소유	To Have And Have Not , 1944	1948	12세 관람가
+10787	비련의 공주 엘리자베스	Young Bess , 1953		NR
+10788	소권괴초 2 - 용등호약	龍騰虎躍 , Fearless Hyena Part II , 1983	2015	전체 관람가
+10789	수탉	Rooster , 1990	1990	청소년 관람불가
+10790	SOS 베이루트행 847	The Taking Of Flight 847: The Uli Derickson Story , 1988		
+10791	타잔 - 엘모 린콘 편 1	Tarzan Of The Apes , 1918		
+10792	브라질	Brazil , 1985		15세 관람가
+10793				
+10794	아이반호	Ivanhoe , 1952		NR
+10795	유혹은 밤 그림자처럼	Internal Affairs , 1990	1990	청소년 관람불가
+10796	벅시	Bugsy , 1991	1992	청소년 관람불가
+10797	투 캐치 어 스파이	To Catch A Spy , 1971		NR
+10798	WR 유기체의 신비	W.R. - Mysterije Organizma , W.R.: Mysteries Of The Organism , 1971		NR
+10799	내 친구 제제	내친구 제제 , 1989	1989	전체 관람가
+10800	토탈 리콜	Total Recall , 1990	1990	청소년 관람불가
+10801	비버리 힐의 낮과 밤	Down And Out In Beverly Hills , 1986		청소년 관람불가
+10802	김의 전쟁	金의 戰爭 , Kim's War , 1992	1992	15세 관람가
+10803	황무지	Badlands , 1973		PG
+10804	롤라 몽테스	Lola Montez , Lola Montes , 1955		NR
+10805	101마리의 달마시안 개	One Hundred And One Dalmatians , 1961		G
+10806	애란	愛亂 , Aeran , 1989	1989	청소년 관람불가
+10807	비탄	Heartaches , 1981		R
+10808	타잔 - 마일스 오키프 편	Tarzan, The Ape Man , 1981		R
+10809	로라 내사랑	Une Femme Ou Deux , One Woman Or Two , 1985		PG-13
+10810	모두가 죽이고 싶던 여자	1992	1992	청소년 관람불가
+10811	이자벨 에버하트	Isabelle Eberhardt , 1991	1992	청소년 관람불가
+10812	마이키 이야기 2	Look Who's Talking Too , 1990	1991	12세 관람가
+10813	우묵배미의 사랑	A Short Love Affair , 1990	2018	청소년 관람불가
+10814	장군의 아들 2	將軍의 아들 2: The Generla's Son 2 , 1991	1991	15세 관람가
+10815	장군의 아들 3	將軍의 아들 3: The General's Son 3 , 1992	1992	15세 관람가
+10816	인천	Inchon , 1981		PG
+10817	딕 트레이시	Dick Tracy , 1990	1991	15세 관람가
+10818	우리 생애 최고의 해	The Best Years Of Our Lives , 1946		NR
+10819	우뢰매	Wuroi-mae From Outer Space , 1986	1986	전체 관람가
+10820	내 사랑 동키호테	My Love, Don Quixote , 1989	1989	15세 관람가
+10821	루 모귀의 살인자	Murders In The Rue Morgue , 1971		PG
+10822	백경	Moby Dick , 1956	2014	15세 관람가
+10823	바운티호의 반란	Mutiny On The Bounty , 1935		12세 관람가
+10824	바운티호의 반란	The Bounty , 1984		NR
+10825	배틀 포스	Il Grande attacco , Battle Force , 1977		PG
+10826	사랑의 묘약	Loco Veneno , 1988		NR
+10827	영심이	0심이: Young-Shim , 1990	1990	전체 관람가
+10828	영구와 땡칠이	Yong-Gu And Daeng Chiri , 1989	1989	전체 관람가
+10829	죽음의 카운트다운	D.O.A. , 1950		G
+10830	죽음의 카운트다운	D.O.A. , 1988		청소년 관람불가
+10831	블랙 에이리언	Metamorphosis: The Alien Factor , 1990	1991	15세 관람가
+10832	밤 그리고 도시	Night And The City , 1992	1993	청소년 관람불가
+10833	바보같은 자의 비극	La Tragedia Di Un Uomo Ridicolo , Tragedy Of A Ridiculous Man , 1981		PG
+10834	깃발 없는 기수	깃발없는 旗手 , No Glory , 1979	1980	12세 관람가
+10835	깊고 푸른 밤	Deep Blue Night , 1984	1985	청소년 관람불가
+10836	아파치	Apache , 1954	2005	NR
+10837	베를린 리포트	Berlin Report , 1991	1991	청소년 관람불가
+10838	미스터 시커모어	Mr. Sycamore , 1974		NR
+10839	부활의 날	復活の日: Day Of Ressurection , 1980		PG
+10840	꿈	Dream , 1955	1955	12세 관람가
+10841	꿈	Dream , 1990	1990	12세 관람가
+10842	변강쇠 2	1987	1987	청소년 관람불가
+10843	칠수와 만수	Chil-su And Man-su , 1988	1988	15세 관람가
+10844	캣 피플	Katzenmenschen , Cat People , 1982		청소년 관람불가
+10845	프럼버	The Plumber , 1979		
+10846	블루 하트	Blue Heart , 1987	1987	전체 관람가
+10847	쿼바디스	Quo Vadis , 1951	1986	12세 관람가
+10848	타잔과 잃어버린 탐험대	Tarzan And The Lost Safari , 1957	1958	NR
+10849	타잔 - 엘모 린콘 편 3	The Adventures Of Tarzan , 1921		NR
+10850	마지막 사랑	The Sheltering Sky , 1990	1995	청소년 관람불가
+10851	특경도룡	特警屠龍 , Tiger Cage , 1988	2014	15세 관람가
+10852	영웅문	楊過與小龍女: The Little Dragon Maiden , 1982		NR
+10853	천국으로 가는 장의사	A Rage In Harlem , 1991	1992	청소년 관람불가
+10854	새	Alfred Hitchcock's The Birds , The Birds , 1963	1966	15세 관람가
+10855	영 몬스터	Frankenstein: The College Years , 1991		12세 관람가
+10856	죽음의 표적	Marked For Death , 1990	1991	청소년 관람불가
+10857	칼리굴라	Caligola , Caligula , 1979	1991	R
+10858	성프란체스코	Fratello Sole Sorella Luna , Brother Sun, Sister Moon , 1973		15세 관람가
+10859	택시 블루스	Taksi-Blyuz , Taxi Blues , 1990		청소년 관람불가
+10860	비둘기가 날 때	Flight Of The Doves , 1971		NR
+10861	바다는 보고 있었다	海は見ていた , The Sea Is Watching , 2002		R
+10862	선샤인 보이	The Sunshine Boys , 1975		PG
+10863	80일간의 세계일주	Around The World In Eighty Days , 1956		G
+10864	브링크 도난 사건	The Brink's Job , 1978		PG
+10865	비공개	Guilty by Suspicion , 1991	1992	청소년 관람불가
+10866	부메랑	Boomerang , 1992	1992	청소년 관람불가
+10867	밤	La Notte , The Night , 1961		15세 관람가
+10868	사랑 사기꾼	Opportunity Knocks , 1990		15세 관람가
+10869	더블 반담	Double Impact , 1991	1991	청소년 관람불가
+10870	셜록홈즈 - 살인의 전주곡	Dressed To Kill , Sherlock Holmes and Dressed to Kill , 1946		
+10871	드레스드 투 킬	Vestida para matar , Dressed To Kill , 1980	1984	청소년 관람불가
+10872	모스키토 코스트	The Mosquito Coast , 1986	1990	PG
+10873	발지 대전투	Battle Of The Bulge , 1965		NR
+10874	베로니카의 이중 생활	La double vie de Veronique , The Double Life of Veronique , 1991	2016	청소년 관람불가
+10875	매혹당한 사람들	The Beguiled , 1971		R
+10876	사랑은 파도를 헤치고	Now And Forever , 1983		R
+10877	종횡사해	縱橫四海 , Once A Thief , 1991	2015	15세 관람가
+10878	대열차 강도	The Great Train Robbery , 1903		NR
+10879	내일을 향해 달려라	Tell Them Willie Boy Is Here , 1969		PG
+10880	와일드 오키드	Wild Orchid , 1990	1990	청소년 관람불가
+10881	내 인생의 남자	L'Homme De Ma Vie , The Man Of My Life , 1992	1992	청소년 관람불가
+10882	헨리 5세	Henry V , 1989	1992	12세 관람가
+10883	대열병	大閱兵 , The Big Parade , 1985		NR
+10884	더블 테이크	Double Take , 2001		15세 관람가
+10885	물 위를 걷는 여자	The Woman Who Walks On Water , 1990	1990	청소년 관람불가
+10886	베이비 붐	Baby Boom , 1987		PG
+10887	솔저 스토리	A Soldier's Story , 1984		15세 관람가
+10888	프렌치 커넥션	The French Connection , 1971		청소년 관람불가
+10889	프렌치 커넥션 2	The French Connection II , 1975		청소년 관람불가
+10890	가면 속의 아리아	Le Maitre De Musique , The Music Teacher , 1989		15세 관람가
+10891	깜보	Kam-Bo , 1986	1986	청소년 관람불가
+10892	엘리스는 이제 여기 살지 않는다	Alice Doesn't Live Here Anymore , 1974		PG
+10893	괴물의 신부	Bride Of The Monster , 1955		NR
+10894	흐트러진 구름	乱れ雲 , Scattered Clouds , 1967		
+10895	피부 깊숙이	Skin Deep , 1989	1989	청소년 관람불가
+10896	엠마뉴엘 3 - 굿바이 엠마뉴엘	Goodbye Emmanuelle , 1977	1990	청소년 관람불가
+10897	파리의 아메리카인	An American In Paris , 1951		12세 관람가
+10898	나일 살인사건	Death On The Nile , 1978	1981	PG
+10899	미로 속의 함정	Enigma , 1983		NR
+10900	개그맨	Gagman , 1988	1989	15세 관람가
+10901	깊은 밤 깊은 곳에	The Other Side Of Midnight , 1977	1987	청소년 관람불가
+10902	러브 러브	Han Hee-jak's Love Stories , 1991		청소년 관람불가
+10903	과학자의 길	The Story of Louis Pasteur , 1936		NR
+10904	긴 여로, 짧은 행복	The Long Journay Home , 1987		
+10905	개인 교수 2	The Big Bet , 1985	1990	청소년 관람불가
+10906	깨어진 꿈	Bir Kirik Bebek , 1987		NR
+10907	비너스	Meeting Venus , 1991		PG-13
+10908	필사의 스턴트 작전	Stunts Unlimited , 1980		
+10909	위험한 정사	Fatal Attraction , 1987	1990	청소년 관람불가
+10910	레이디 인 블랙	Senza Scrupoli , 1985	1986	NR
+10911	학살의 천사	El Angel Exterminador , The Exterminating Angel , 1962		NR
+10912	8번가의 기적	Batteries Not Included , 1987	1989	전체 관람가
+10913	새벽의 출격	The Dawn Patrol , 1930		NR
+10914	볼로뉴 숲의 여인들	Les Dames Du Bois De Boulogne , The Ladies Of The Bois De Boulogne , 1945		15세 관람가
+10915	바람과 라이온	The Wind And The Lion , 1975	1976	PG
+10916	라벤더 힐 몹	The Lavender Hill Mob , 1951		NR
+10917	전화로만 끝내 주세요	Intimate Stranger , 1992	1992	청소년 관람불가
+10918	브레이킹 2	Breakin' 2: Electric Boogaloo , 1984		PG
+10919	피고인	The Accused , 1988	1989	청소년 관람불가
+10920	나의 밤은 당신의 낮보다 아름답다	Mes Nuits Sont Plus Belles Que Vos Jours , My Night Is More Beautiful Than Your Day , 1989	1990	청소년 관람불가
+10921	아제 아제 바라아제	Come, Come, Come Upward , 1989	1989	15세 관람가
+10922	고령가 소년 살인사건	牯嶺街少年殺人事件 , A Brighter Summer Day , 1991	2017	15세 관람가
+10923	뻘	1991	1991	청소년 관람불가
+10924	세계사	History Of The World: Part I , 1981		R
+10925	승리의 전쟁	Heartbreak Ridge , 1986		청소년 관람불가
+10926	90 벌레먹은 장미	1990	1990	청소년 관람불가
+10927	우드스탁: 사랑과 평화의 3일	Woodstock , 1970		
+10928	공포 속의 여행	Journey Into Fear , 1942		NR
+10929	따귀 일곱대	Seven Slaps On The Face , 1987	1987	15세 관람가
+10930	브로드웨이의 대니 로즈	Broadway Danny Rose , 1984		PG
+10931	공작왕	孔雀王子 , Peacock Prince , 1988	2014	NR
+10932	뼁뽈로의 여행	Le Voyage A Paimpol , Voyage To Paimpol , 1985		NR
+10933	새앙쥐 상륙 작전	1989	1989	전체 관람가
+10934	비너스의 여름시	1991	1991	청소년 관람불가
+10935	로드 하우스	Road House , 1989	1990	청소년 관람불가
+10936	가위손	Edward Scissorhands , 1990	2014	15세 관람가
+10937	위기의 여자	1987	1987	청소년 관람불가
+10938	피셔 킹	The Fisher King , 1991	1993	청소년 관람불가
+10939	원 + 씩스	Man Of The Year , Home Eroticus , 1971	1988	NR
+10940	베어	L'Ours , The Bear , 1988	1992	전체 관람가
+10941	누가 로져 래빗을 모함했나	Who Framed Roger Rabbit , 1988	1990	12세 관람가
+10942	대야망	The Blue Max , 1966		NR
+10943	백설공주	Snow White , 1916		NR
+10944	져지 걸	Jersey Girl , 1992	1992	15세 관람가
+10945	밀드레드 피어스	Mildred Pierce , 1945		15세 관람가
+10946	공룡 선생	공룡 先生: Dinosaur Teacher , 1992	1992	전체 관람가
+10947	카르멘	Carmen , 1983	1990	청소년 관람불가
+10948	라쇼몽	羅生門 , In The Woods , 1950		NR
+10949	마르세이유 탈출	The Marseille Contract , The Destructors , 1974		PG
+10950	마지막 전투	Le Dernier Combat , The Last Battle , 1983	2000	15세 관람가
+10951	폭소 감방	Stir Crazy , 1980		R
+10952	목사님 만세	The North Avenue Irregulars , 1979		NR
+10953	마루타	黑太陽 731: Men Behind The Sun , The Devil 731 , 1988	1990	NR
+10954	낙화유수	1927	1927	NR
+10955	투 문 정션	Two Moon Junction , 1988	1988	청소년 관람불가
+10956	겨울의 라이온	The Lion In Winter , 1968		PG
+10957				
+10958	맨 투 맨	Blame It On The Night , 1984		전체 관람가
+10959	아이드 래더 비 리치	I'd Rather Be Rich , 1964		NR
+10960	캣 벌루	Cat Ballou , 1965		NR
+10961	핑크빛 소동	Seems Like Old Times , 1980		PG
+10962	블레이드 러너	Blade Runner , 1982	2018	15세 관람가
+10963	가미가제	Kamikaze , 1960		청소년 관람불가
+10964	섹스 거짓말 그리고 비디오테이프	Sex, Lies, And Videotape , 1989	1990	청소년 관람불가
+10965	전선 위의 참새	Bird On A Wire , 1990	1990	PG-13
+10966	할로윈	Halloween , 1978		청소년 관람불가
+10967	할로윈 2 - 저주받은 병실	Halloween II , 1981		청소년 관람불가
+10968	할로윈 3	Halloween III: Season Of The Witch , 1983		청소년 관람불가
+10969	할로윈 4	Halloween 4: The Return Of Michael Myers , 1988		15세 관람가
+10970	원스 어폰 어 타임 인 아메리카	Once Upon A Time In America , 1984	2015	청소년 관람불가
+10971	블루 스틸	Blue Steel , 1990	1990	청소년 관람불가
+10972	한니발	Annibale , Hanibal , 1959	1961	NR
+10973	리애니메이터	Re-Animator , 1985		청소년 관람불가
+10974	쥬리아	Der Liebesschuler , Wolfgaug Bauer's Julia , 1974	1988	NR
+10975	킹콩 2	King Kong Lives , 1986	1986	PG
+10976	라인의 감시	Watch On The Rhine , 1943	1946	NR
+10977	블루 스틸	Blue Steel , 1934		NR
+10978	학창 보고서	1987	1987	NR
+10979	비틀즈: 하드 데이즈 나이트	A Hard Day's Night , 1964	2016	전체 관람가
+10980	분노의 역류	Backdraft , 1991	1991	15세 관람가
+10981	하바나	Havana , 1990	1991	청소년 관람불가
+10982	프랑스에서의 13일	Grenoble , 13 Jours En France , 1968	1970	
+10983	사랑이 머무는 곳에	Ice Castles , 1978	1979	PG
+10984	전략 공군 사령부	Stragetic Air Command , 1955		15세 관람가
+10985	할리와 말보로 맨	Harley Davidson And The Marlboro Man , 1991	1991	청소년 관람불가
+10986	달빛 아래서	Moonlighting , Schwarzarbeit , 1982		PG
+10987	하오의 연정	Love In The Afternoon , 1957		12세 관람가
+10988	파리의 여인	A Woman Of Paris , 1923	2015	NR
+10989	핑크빛 연인	Pretty In Pink , 1986		15세 관람가
+10990				
+10991	핵전략 사령부	Fail-Safe , 1964		NR
+10992	파리의 야화	La Chica Del Molino Rojo , The Girl From Red Cabaret , 1973		NR
+10993	톰 혼	Tom Horn , 1980		R
+10994	19번째 남자	Bull Durham , 1988	1990	청소년 관람불가
+10995	공포의 여정	Journey Into Fear , 1975		PG
+10996	버스틴 루즈	Bustin' Loose , 1981		R
+10997	블랙 엔젤	Mausoleum , 1983		청소년 관람불가
+10998	폭주 기관차	Runaway Train , 1985	1989	15세 관람가
+10999	프랑켄슈타인	Frankenstein , 1931		NR
