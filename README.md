@@ -4,6 +4,18 @@ MovieLens style dataset built from Naver Movie rating systems with [Naver Movie 
 
 [scraper]: https://github.com/lovit/naver_movie_scraper
 
+## KMRD-small
+
+Dataset with 999 movies, 52k users, 134k rates. Identifier of users is masked. `timestamps` format is UNIX time (second).
+
+```python
+from kmr_dataset import load_rates
+from kmr_dataset import get_paths
+
+paths = get_paths(size='small')
+rates, timestamps = load_rates(size='small')
+```
+
 ## Files of dataste
 
 Dataset consists of following files.
@@ -20,6 +32,23 @@ movie	title	title_eng	year	grade
 39516	달콤한 인생	A Bittersweet Life , 2005	2005	청소년 관람불가
 ...
 ```
+
+```python
+import pandas as pd
+from kmr_dataset import get_paths
+
+path = get_paths(size='small')[3]
+df = pd.read_csv(path)
+df.head()
+```
+
+|  | movie | title | title_eng | year | grade |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 10001 | 시네마 천국 | Cinema Paradiso , 1988 | 2013.0 | 전체 관람가 |
+| 1 | 10002 | 빽 투 더 퓨쳐 | Back To The Future , 1985 | 2015.0 | 12세 관람가 |
+| 2 | 10003 | 빽 투 더 퓨쳐 2 | Back To The Future Part 2 , 1989 | 2015.0 | 12세 관람가 |
+| 3 | 10004 | 빽 투 더 퓨쳐 3 | Back To The Future Part III , 1990 | 1990.0 | 전체 관람가 |
+| 4 | 10005 | 스타워즈 에피소드 4 - 새로운 희망 | Star Wars , 1977 | 1997.0 | PG |
 
 ### People Information File, `peoples.txt`
 
@@ -72,7 +101,32 @@ user,movie,rate,time
 3,10107,7,1169798460
 ```
 
+### Countries, `countries.csv`
 
-## KMRD-small
+Comma separated table, (movie id, country)
 
+```
+movie,country
+10001,이탈리아
+10001,프랑스
+10002,미국
+10003,미국
+10004,미국
+10005,미국
+...
+```
 
+### Genres, `genres.csv`
+
+Comma separated table, (movie id, genre)
+
+```
+movie,genre
+10001,드라마
+10001,멜로/로맨스
+10002,SF
+10002,코미디
+10003,SF
+10003,코미디
+...
+```
