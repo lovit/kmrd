@@ -1,18 +1,22 @@
 import os
 import numpy as np
+from glob import glob
 from scipy.sparse import csr_matrix
+from .install import _check_install
 
 
 installpath = os.path.abspath(os.path.dirname(__file__))
 
 def _initialize_dir(directory, size):
     if directory is None:
-        return f'{installpath}/datafile/kmrd-small/'
+        return f'{installpath}/datafile/kmrd-{size}/'
     return f'{directory}/'
 
-def _check_install(path):
-    if not os.path.exists(path):
-        raise ValueError(f"Datfiles has not been installed yet\npath = {path}")
+def get_paths(directory=None, size='small'):
+    directory = _initialize_dir(directory, size)
+    paths = glob(f'{directory}/*.txt') + glob(f'{directory}/*.csv')
+    paths = sorted(paths)
+    return paths
 
 def load_rates(directory=None, size='small'):
     """
