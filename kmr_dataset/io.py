@@ -31,8 +31,13 @@ def load_rates(directory=None, size='small'):
     -------
     rates : scipy.sparse.csr_matrix
         (user, movie) = rate
-    timestamp : numpy.ndarray
+    timestamps : numpy.ndarray
         UNIX time, corresponding rates.data
+
+    Usage
+    -----
+        >>> from kmr_dataset import load_rates
+        >>> rates, timestamps = load_rates(size='small')
     """
     path = _initialize_dir(directory, size) + 'rates.csv'
     _check_install(path)
@@ -40,7 +45,7 @@ def load_rates(directory=None, size='small'):
     def parser(line):
         return [int(col) for col in line.strip().split(',')]
 
-    rows, cols, data, timestamp = [], [], [], []
+    rows, cols, data, timestamps = [], [], [], []
 
     with open(path, encoding='utf-8') as f:
         # skip head: user,movie,rate,time
@@ -50,8 +55,8 @@ def load_rates(directory=None, size='small'):
             rows.append(i)
             cols.append(j)
             data.append(v)
-            timestamp.append(t)
+            timestamps.append(t)
 
     rates = csr_matrix((data, (rows, cols)))
-    timestamp = np.array(timestamp, dtype=np.int)
-    return rates, timestamp
+    timestamps = np.array(timestamps, dtype=np.int)
+    return rates, timestamps
