@@ -1,6 +1,8 @@
 import os
 import json
 import numpy as np
+from datetime import datetime
+from glob import glob
 from utils import initialize_usermapper
 from utils import save_usermapper
 from utils import save_rows
@@ -9,103 +11,132 @@ from utils import load_list_of_dict
 from utils import mask_user
 from utils import to_unix_time
 
-def make_ratings(data_dir, movie_indices, dataset_dir):
-    texts_path = f'{dataset_dir}/texts.txt'
-    rates_path = f'{dataset_dir}/rates.csv'
-    userlist_path = f'{dataset_dir}/userlist'
-    user_id_mapper = initialize_usermapper(load_usermapper(userlist_path))
+def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
+    data_major, users_major, data_minor, users_minor = load_comments(data_dir, debug, min_count)
 
-    rates_dumps = []
-    texts_dumps = []
+    ##############################
+    # frequency filtered dataset #
+    dataname = f'kmrd-{int(len(data_major) / volume)}m'
+    user_idxs, movie_idxs, idxs, rates, timestamps, texts = zip(*data_major)
+
+    def save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, users, dataname):
+        if not os.path.exists(f'{dataset_dir}/{dataname}'):
+            os.makedirs(f'{dataset_dir}/{dataname}')
+
+        rates_dump = tuple(zip(user_idxs, movie_idxs, rates, timestamps))
+        rates_path = f'{dataset_dir}/{dataname}/rates.csv'
+        save_rows(rates_dump, rates_path, 'user,movie,rate,time', ',')
+
+        texts_dump = tuple(zip(user_idxs, movie_idxs, rates, texts))
+        texts_path = f'{dataset_dir}/{dataname}/texts.txt'
+        save_rows(texts_dump, texts_path, 'user\tmovie\trate\ttext', '\t')
+
+        userlist_path = f'{dataset_dir}/{dataname}/userlist'
+        with open(userlist_path, 'w', encoding='utf-8') as f:
+            for user in users:
+                f.write(f'{user}\n')
+
+        idxs_path = f'{dataset_dir}/{dataname}/idxs'
+        with open(idxs_path, 'w', encoding='utf-8') as f:
+            f.write('comment_idx\n')
+            for idx in idxs:
+                f.write(f'{idx}\n')
+
+    save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, users_major, dataname)
+    print('saved filtered dataset')
+
+    ########################
+    # non-filtered dataset #
+    user_idxs_, movie_idxs_, idxs_, rates_, timestamps_, texts_ = zip(*data_minor)
+
+    # concatenate
+    user_idxs += user_idxs_
+    movie_idxs += movie_idxs_
+    idxs += idxs_
+    rates += rates_
+    timestamps += timestamps_
+    texts += texts_
+    users = np.concatenate([users_major, users_minor])
+    dataname = f'kmrd-{int(len(rates) / volume)}m'
+
+    save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, users, dataname)
+    print('saved non-filtered dataset\ndone')
+
+def load_comments(data_dir, debug, min_count):
+
+    def parse_time(yymmdd):
+        return int(datetime.strptime(yymmdd, '%y.%m.%d').timestamp())
+
+    paths = glob(f'{data_dir}/user_comments/*/*') + glob(f'{data_dir}/user_comments/*')
+    paths = [path for path in paths if os.path.isfile(path)]
+    if debug:
+        paths = paths[:30]
+
+    data_major, data_minor = [], []
+    users_major, users_minor = [], []
 
     n_exceptions = 0
-    n_movies = len(movie_indices)
-    for i, movie_idx in enumerate(movie_indices):
-        inpath = f'{data_dir}/comments/{movie_idx}'
-        if not os.path.exists(inpath):
+    n_paths = len(paths)
+    for i, path in enumerate(paths):
+        try:
+            name = int(path.split('/')[-1])
+            comments = load_list_of_dict(path)
+        except:
             continue
-        comments = load_list_of_dict(inpath)
-        comments = {json.dumps(row) for row in comments}
-        comments = [json.loads(row) for row in comments]
-        rates = []
-        texts = []
 
+        comments_ = []
         for comment in comments:
             try:
-                user_idx = mask_user(comment['user'], user_id_mapper)
-                timestamp = to_unix_time(comment['written_at'])
-                rate = comment['score']
+                idx = int(comment['idx'])
+                movie_idx = int(comment['movie_idx'])
+                rate = int(comment['score'])
+                timestamp = parse_time(comment['written_at'])
                 text = comment['text']
-                agree, disagree = comment['agree'], comment['disagree']
-
-                rates.append((user_idx, movie_idx, rate, timestamp))
-                if text:
-                    texts.append((user_idx, movie_idx, agree, disagree, text))
+                comments_.append((idx, movie_idx, rate, timestamp, text))
             except Exception as e:
-                print()
-                print(e)
-                print(comment, end='\n\n')
                 n_exceptions += 1
-                continue
 
-        rates_dumps += rates
-        texts_dumps += texts
+        if len(comments_) >= min_count:
+            data, users = data_major, users_major
+        else:
+            data, users = data_minor, users_minor
+
+        user_idx = len(users)
+        users.append(name)
+        for idx, movie_idx, rate, timestamp, text in comments_:
+            data.append((user_idx, movie_idx, idx, rate, timestamp, text))
 
         if i % 1000 == 0:
-            percent = 100 * (i+1) / n_movies
-            n_rates = len(rates_dumps)
-            n_texts = len(texts_dumps)
-            print(f'\rScanning {percent:.4}%: {n_rates} rates & {n_texts} texts from {n_movies} movies', end='')
-    print(f'\rScanning has been finished. Found {n_rates} rates & {n_texts} texts from {n_movies} movies')
+            percent = 100 * (i+1) / n_paths
+            n_data = len(data)
+            print(f'\rScanning {percent:.4}%: {n_data} rates', end='')
+    print(f'\rScanning has been finished. Found {n_data} rates')
     print(f'Number of exceptions = {n_exceptions}')
 
-    rates_dumps = sorted(rates_dumps)
-    texts_dumps = sorted(texts_dumps)
-    user_list = np.array([user for user, _ in sorted(user_id_mapper.items(), key=lambda x:x[1])])
+    data_major, users_major = renumbering_users_by_frequency(data_major, users_major)
+    data_minor, users_minor = renumbering_users_by_frequency(data_minor, users_minor, len(users_major))
+    return data_major, users_major, data_minor, users_minor
 
-    # sort by user frequency
-    rows, cols, rates, timestamp = zip(*rates_dumps)
-    user_count = np.bincount(rows, minlength=np.array(rows).max())
-    sorted_user_indices = user_count.argsort()[::-1]
+def renumbering_users_by_frequency(data, users, begin=0):
+    user_idxs, movie_idxs, idxs, rates, timestamps, texts = zip(*data)
+    user_idxs = np.array(user_idxs)
+    users = np.array(users)
+
+    # count users
+    user_count = np.bincount(user_idxs, minlength=np.unique(users).shape[0])
+    sorted_indices = user_count.argsort()[::-1]
     indices_transfer = np.array(
-        [new_idx for new_idx, _ in
-         sorted(enumerate(sorted_user_indices), key=lambda x:x[1])])
-    rows = np.array(rows)
-    rows = indices_transfer[rows]
-    user_list = user_list[sorted_user_indices]
-    rates_dumps = list(zip(list(rows), cols, rates, timestamp))
-    rates_dumps = sorted(rates_dumps)
+        [new_idx for new_idx, _ in sorted(enumerate(sorted_indices), key=lambda x:x[1])])
 
-    # make concreate dataset
-    n_active_users = np.where(user_count >= 20)[0].shape[0]
-    rates_dumps_small = [entry for entry in rates_dumps if entry[0] < n_active_users]
+    # reordering
+    user_idxs = indices_transfer[user_idxs] + begin
+    users = np.array(users)[sorted_indices]
 
-    # text dataset
-    rows, cols, agree, disagree, texts = zip(*texts_dumps)
-    rows = indices_transfer[np.array(rows)]
-    texts_dumps = list(zip(list(rows), cols, agree, disagree, texts))
-    texts_dumps = sorted(texts_dumps)
-    texts_dumps_small = [entry for entry in texts_dumps if entry[0] < n_active_users]
+    # remake
+    data = tuple(zip(tuple(user_idxs), movie_idxs, idxs, rates, timestamps, texts))
+    data = sorted(data)
 
-    # save fulldata
-    suffix = f'-{int(len(rates_dumps)/1000000)}m'
-    texts_path = f'{dataset_dir}/texts{suffix}.txt'
-    rates_path = f'{dataset_dir}/rates{suffix}.csv'
-    userlist_path = f'{dataset_dir}/userlist{suffix}'
-    save_rows(rates_dumps, rates_path, 'user,movie,rate,time', ',')
-    save_rows(texts_dumps, texts_path, 'user\tmovie\tagree\tdisagree\ttext', '\t')
-    user_id_mapper = {user:idx for idx, user in enumerate(user_list)}
-    save_usermapper(user_id_mapper, userlist_path)
-
-    # save concreate dataset
-    suffix = f'-{int(len(rates_dumps_small)/1000000)}m'
-    texts_path = f'{dataset_dir}/texts{suffix}.txt'
-    rates_path = f'{dataset_dir}/rates{suffix}.csv'
-    userlist_path = f'{dataset_dir}/userlist{suffix}'
-    save_rows(rates_dumps_small, rates_path, 'user,movie,rate,time', ',')
-    save_rows(texts_dumps_small, texts_path, 'user\tmovie\tagree\tdisagree\ttext', '\t')
-    user_id_mapper = {user:idx for idx, user in enumerate(user_list[:n_active_users])}
-    save_usermapper(user_id_mapper, userlist_path)
+    return data, users
 
 def make_directing(data_dir, movie_indices, dataset_dir):
     people_dictionary_path = f'{dataset_dir}/peoples.txt'
