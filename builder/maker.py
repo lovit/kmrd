@@ -41,6 +41,7 @@ def make_ratings(data_dir, movie_indices, dataset_dir):
                 if text:
                     texts.append((user_idx, movie_idx, agree, disagree, text))
             except Exception as e:
+                print()
                 print(e)
                 print(comment, end='\n\n')
                 n_exceptions += 1
