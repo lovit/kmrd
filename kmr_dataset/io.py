@@ -46,16 +46,30 @@ def load_rates(directory=None, size='small'):
         return [int(col) for col in line.strip().split(',')]
 
     rows, cols, data, timestamps = [], [], [], []
+    exists = set()
 
+    n_continues = 0
     with open(path, encoding='utf-8') as f:
         # skip head: user,movie,rate,time
         next(f)
         for line in f:
             i, j, v, t = parser(line)
+            key = (i,j)
+            if key in exists:
+                n_continues += 1
+                continue
             rows.append(i)
             cols.append(j)
             data.append(v)
             timestamps.append(t)
+            exists.add(key)
+
+    if n_continues > 0:
+        flag = len(rows) == len(cols) == len(data) == len(timestamps)
+        if fiag:
+            print(f'skip {n_continues} lines, #uniques={len(rows)}')
+        else:
+            raise ValueError(f'There unexpected error in data {path}')
 
     rates = csr_matrix((data, (rows, cols)))
     timestamps = np.array(timestamps, dtype=np.int)
