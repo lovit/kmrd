@@ -1,4 +1,7 @@
 import numpy as np
+import math
+from bokeh.io import export_png
+from bokeh.layouts import gridplot
 from bokeh.palettes import Blues
 from bokeh.plotting import figure
 
@@ -129,3 +132,8 @@ def describe_stats(x, row_name='user', col_name='item', data_name=''):
  - sparsity : {sparsity}
  - sparsity (compatified) : {sparsity_unique}
          """)
+
+def to_gridplot(figures):
+    n_rows = math.ceil(len(figures)/2)
+    grid = [figures[2*i:2*i+2] for i in range(n_rows)]
+    return gridplot(grid)
