@@ -1,5 +1,6 @@
 import os
 import json
+import numpy as np
 from utils import initialize_usermapper
 from utils import save_usermapper
 from utils import save_rows
@@ -60,9 +61,50 @@ def make_ratings(data_dir, movie_indices, dataset_dir):
 
     rates_dumps = sorted(rates_dumps)
     texts_dumps = sorted(texts_dumps)
+    user_list = np.array([user for user, _ in sorted(user_id_mapper.items(), key=lambda x:x[1])])
 
+    # sort by user frequency
+    rows, cols, rates, timestamp = zip(*rates_dumps)
+    user_count = np.bincount(rows, minlength=np.array(rows).max())
+    sorted_user_indices = user_count.argsort()[::-1]
+    indices_transfer = np.array(
+        [new_idx for new_idx, _ in
+         sorted(enumerate(sorted_user_indices), key=lambda x:x[1])])
+    rows = np.array(rows)
+    rows = indices_transfer[rows]
+    user_list = user_list[sorted_user_indices]
+    rates_dumps = list(zip(list(rows), cols, rates, timestamp))
+    rates_dumps = sorted(rates_dumps)
+
+    # make concreate dataset
+    n_active_users = np.where(user_count >= 20)[0].shape[0]
+    rates_dumps_small = [entry for entry in rates_dumps if entry[0] < n_active_users]
+
+    # text dataset
+    rows, cols, agree, disagree, texts = zip(*texts_dumps)
+    rows = indices_transfer[np.array(rows)]
+    texts_dumps = list(zip(list(rows), cols, agree, disagree, texts))
+    texts_dumps = sorted(texts_dumps)
+    texts_dumps_small = [entry for entry in texts_dumps if entry[0] < n_active_users]
+
+    # save fulldata
+    suffix = f'-{int(len(rates_dumps)/1000000)}m'
+    texts_path = f'{dataset_dir}/texts{suffix}.txt'
+    rates_path = f'{dataset_dir}/rates{suffix}.csv'
+    userlist_path = f'{dataset_dir}/userlist{suffix}'
     save_rows(rates_dumps, rates_path, 'user,movie,rate,time', ',')
     save_rows(texts_dumps, texts_path, 'user\tmovie\tagree\tdisagree\ttext', '\t')
+    user_id_mapper = {user:idx for idx, user in enumerate(user_list)}
+    save_usermapper(user_id_mapper, userlist_path)
+
+    # save concreate dataset
+    suffix = f'-{int(len(rates_dumps_small)/1000000)}m'
+    texts_path = f'{dataset_dir}/texts{suffix}.txt'
+    rates_path = f'{dataset_dir}/rates{suffix}.csv'
+    userlist_path = f'{dataset_dir}/userlist{suffix}'
+    save_rows(rates_dumps_small, rates_path, 'user,movie,rate,time', ',')
+    save_rows(texts_dumps_small, texts_path, 'user\tmovie\tagree\tdisagree\ttext', '\t')
+    user_id_mapper = {user:idx for idx, user in enumerate(user_list[:n_active_users])}
     save_usermapper(user_id_mapper, userlist_path)
 
 def make_directing(data_dir, movie_indices, dataset_dir):
