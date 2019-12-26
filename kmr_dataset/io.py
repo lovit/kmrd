@@ -66,7 +66,7 @@ def load_rates(directory=None, size='small'):
 
     if n_continues > 0:
         flag = len(rows) == len(cols) == len(data) == len(timestamps)
-        if fiag:
+        if flag:
             print(f'skip {n_continues} lines, #uniques={len(rows)}')
         else:
             raise ValueError(f'There unexpected error in data {path}')
