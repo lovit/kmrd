@@ -126,7 +126,7 @@ def renumbering_users_by_frequency(data, users, begin=0):
     users = np.array(users)
 
     # count users
-    user_count = np.bincount(user_idxs, minlength=users.max()+1)
+    user_count = np.bincount(user_idxs, minlength=users.shape[0])
     sorted_indices = user_count.argsort()[::-1]
     indices_transfer = np.array(
         [new_idx for new_idx, _ in sorted(enumerate(sorted_indices), key=lambda x:x[1])])
@@ -134,6 +134,12 @@ def renumbering_users_by_frequency(data, users, begin=0):
     # reordering
     user_idxs = indices_transfer[user_idxs] + begin
     users = np.array(users)[sorted_indices]
+
+    # drop zero vector users
+    user_count = np.bincount(user_idxs, minlength=users.shape[0])
+    zero_users = np.where(user_count == 0)[0]
+    if zero_users.shape[0] > 0:
+        users = users[:zero_users[0]]
 
     # remake
     data = tuple(zip(tuple(user_idxs), movie_idxs, idxs, rates, timestamps, texts))
@@ -196,6 +202,31 @@ def insert(data, table):
     print(f'\rInserion has been done. The size of rows = {n_data}  ')
     return table
 
+def remove_duplicated_users(data):
+    """
+    Arguments
+    ---------
+    data : list of tuple
+        A tuple consists of (user, movie, comment idx, rate, time, text)
+
+    Usage
+    -----
+        >>> data_minor_ = remove_duplicated_users(data_minor)
+    """
+    table = IndexTable()
+    table = insert(data, table)
+    candidates = candidates_of_duplicated_users(table)
+    duplicateds = {u for base in  candidates for u in find_duplicated_users(table, base)}
+    print(f'# candidates : {len(candidates)}, # duplicateds : {len(duplicateds)}')
+
+    n_before = len(data)
+    data = [row for row in data if not (row[0] in duplicateds)]
+    n_after = len(data)
+    diff = n_before - n_after
+    percent = 100 * n_after / n_before
+    print(f'# rows : {n_before} -> {n_after} (-{diff}, {percent:.4}%)')
+    return data
+
 def candidates_of_duplicated_users(table):
     return {u for users in table.comment_to_user.values() for u in users if len(users) > 2}
 
@@ -233,8 +264,6 @@ def find_duplicated_users(table, user):
     if len(duplicated) == 1:
         return []
     return duplicated[1:]
-
-
 
 ######################
 ## making directing ##
