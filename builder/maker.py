@@ -4,13 +4,13 @@ import numpy as np
 from collections import Counter
 from datetime import datetime
 from glob import glob
-from utils import initialize_usermapper
-from utils import save_usermapper
-from utils import save_rows
-from utils import load_usermapper
-from utils import load_list_of_dict
-from utils import mask_user
-from utils import to_unix_time
+from .utils import initialize_usermapper
+from .utils import save_usermapper
+from .utils import save_rows
+from .utils import load_usermapper
+from .utils import load_list_of_dict
+from .utils import mask_user
+from .utils import to_unix_time
 
 def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
     data_major, users_major, data_minor, users_minor = load_comments(data_dir, debug, min_count)
@@ -124,7 +124,7 @@ def renumbering_users_by_frequency(data, users, begin=0):
     users = np.array(users)
 
     # count users
-    user_count = np.bincount(user_idxs, minlength=np.unique(users).shape[0])
+    user_count = np.bincount(user_idxs, minlength=users.max()+1)
     sorted_indices = user_count.argsort()[::-1]
     indices_transfer = np.array(
         [new_idx for new_idx, _ in sorted(enumerate(sorted_indices), key=lambda x:x[1])])
