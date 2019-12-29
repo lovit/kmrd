@@ -1,6 +1,7 @@
 import os
 import json
 import numpy as np
+from collections import Counter
 from datetime import datetime
 from glob import glob
 from utils import initialize_usermapper
@@ -138,6 +139,104 @@ def renumbering_users_by_frequency(data, users, begin=0):
 
     return data, users
 
+#############################
+## duplicated user remover ##
+
+class IndexTable:
+    def __init__(self):
+        self.comment_to_user = dict()
+        self.user_to_comments = dict()
+
+    def insert(self, user_idx, comment_idxs):
+        """
+        user_idx : int
+        comment_idxs : tuple of int
+        """
+        for cidx in comment_idxs:
+            # insert user to `comment to user`
+            userset = self.comment_to_user.get(cidx, set())
+            userset.add(user_idx)
+            self.comment_to_user[cidx] = userset
+        # insert comments to `user to comments`
+        self.user_to_comments[user_idx] = comment_idxs
+
+def insert(data, table):
+    """
+    Arguments
+    ---------
+    data : list of tuple
+        Tuple, (user, movie, comment idx, _, _, _)
+        Sorted by (user, movie, comment idx)
+    table : IndexTable
+        Database
+
+    Usage
+    -----
+    Insert data to database
+
+        >>> table = IndexTable()
+        >>> table = insert(data_minor, table)
+    """
+    prev_user_idx = -1
+    temporal = []
+    n_data = len(data)
+    for i, (user, movie, comment, _, _, _) in enumerate(data):
+        if (user != prev_user_idx) and (temporal):
+            temporal = sorted(temporal)
+            table.insert(user, tuple(temporal))
+            temporal = []
+        temporal.append(comment)
+        prev_user_idx = user
+        if i % 100000 == 0:
+            print(f'\rInserting rows {100*i/n_data:.4} % ...', end='', flush=True)
+    if temporal:
+        table.insert(prev_user_idx, tuple(temporal))
+    print(f'\rInserion has been done. The size of rows = {n_data}  ')
+    return table
+
+def candidates_of_duplicated_users(table):
+    return {u for users in table.comment_to_user.values() for u in users if len(users) > 2}
+
+def find_duplicated_users(table, user):
+    """
+    Arguments
+    ---------
+    table : IndexTable
+        Database
+    user : int
+        User idx
+
+    Usage
+    -----
+    Insert data to database
+
+        >>> table = IndexTable()
+        >>> table = insert(data_minor, table)
+
+    Find duplicated user candidates
+
+        >>> candidates = candidates_of_duplicated_users(table)
+
+    If the `user` 0 is doubtful, find similar users.
+    If similar users are [0, 1, 2], this function returns the indices after second [1, 2] as duplicated ones.
+
+        >>> for user in sorted(candidates):
+        >>>    print(user, find_duplicated_users(table, user))
+    """
+    comments = table.user_to_comments[user]
+    user_counter = Counter([user for cidx in comments for user in table.comment_to_user[cidx]])
+    base = user_counter[user]
+    duplicated = [u for u, c in user_counter.items() if (abs(c-base) <= 1)]
+    duplicated = sorted(duplicated)
+    if len(duplicated) == 1:
+        return []
+    return duplicated[1:]
+
+
+
+######################
+## making directing ##
+
 def make_directing(data_dir, movie_indices, dataset_dir):
     people_dictionary_path = f'{dataset_dir}/peoples.txt'
     directings_path = f'{dataset_dir}/directings.csv'
@@ -186,6 +285,9 @@ def make_directing(data_dir, movie_indices, dataset_dir):
     save_rows(directings, directings_path, 'movie,people', ',')
     people_dictionary = [(idx, names[0], names[1]) for idx, names in sorted(people_dictionary.items())]
     save_rows(people_dictionary, people_dictionary_path, 'people\tkorean\toriginal', '\t')
+
+####################
+## making casting ##
 
 def make_casting(data_dir, movie_indices, dataset_dir):
     people_dictionary_path = f'{dataset_dir}/peoples.txt'
@@ -245,6 +347,9 @@ def make_casting(data_dir, movie_indices, dataset_dir):
     save_rows(roles, roles_paths, 'movie\tpeople\trole', '\t')
     people_dictionary = [(idx, names[0], names[1]) for idx, names in sorted(people_dictionary.items())]
     save_rows(people_dictionary, people_dictionary_path, 'people\tkorean\toriginal', '\t')
+
+#################
+## making meta ##
 
 def make_meta(data_dir, movie_indices, dataset_dir):
     genres_path = f'{dataset_dir}/genres.csv'
