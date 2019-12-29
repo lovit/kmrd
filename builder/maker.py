@@ -97,7 +97,9 @@ def load_comments(data_dir, debug, min_count):
             except Exception as e:
                 n_exceptions += 1
 
-        if len(comments_) >= min_count:
+        if len(comments_) == 0:
+            continue
+        elif len(comments_) >= min_count:
             data, users = data_major, users_major
         else:
             data, users = data_minor, users_minor
