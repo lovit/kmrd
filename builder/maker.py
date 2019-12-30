@@ -63,7 +63,7 @@ def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
     save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, users, dataname)
     print('saved non-filtered dataset\ndone')
 
-def load_comments(data_dir, debug, min_count):
+def load_comments(data_dir, debug):
 
     def parse_time(yymmdd):
         return int(datetime.strptime(yymmdd, '%y.%m.%d').timestamp())
@@ -73,16 +73,27 @@ def load_comments(data_dir, debug, min_count):
     if debug:
         paths = paths[:30]
 
-    data_major, data_minor = [], []
-    users_major, users_minor = [], []
+    data, users = [], []
+    duplicated_checker = IndexTable()
 
     n_exceptions = 0
+    n_duplicateds = 0
+    n_similars = 0
+    user_idx = 0
     n_paths = len(paths)
+
     for i, path in enumerate(paths):
+        if (i > 0) and (i % 1000 == 0):
+            percent = 100 * (i+1) / n_paths
+            n_data = len(data)
+            message = '\rScanning {:.4}%, rates={}, users={}, simialrs={}, duplicated={}, exception={}    '
+            message = message.format(percent, n_data, user_idx, n_similars, n_duplicateds, n_exceptions)
+            print(message, end='')
+
         try:
             name = int(path.split('/')[-1])
             comments = load_list_of_dict(path)
-        except:
+        except Exception as e:
             continue
 
         comments_ = []
@@ -99,26 +110,46 @@ def load_comments(data_dir, debug, min_count):
 
         if len(comments_) == 0:
             continue
-        elif len(comments_) >= min_count:
-            data, users = data_major, users_major
-        else:
-            data, users = data_minor, users_minor
+
+        # check duplicated user
+        comment_idxs = [idx for idx, _, _, _, _ in comments_]
+        primary_key = {(idx, timestamp) for idx, _, _, timestamp, _ in comments_}
+#         primary_key = {idx for idx, _, _, timestamp, _ in comments_}
+        similar_users = {u for idx in comment_idxs for u in duplicated_checker.comment_to_user.get(idx, [])}
+
+        if similar_users:
+            n_similars += 1
+            exist = False
+            for u in similar_users:
+                if primary_key == duplicated_checker.user_to_comments[u]:
+                    exist = True
+                    break
+            if exist:
+                n_duplicateds += 1
+                continue
 
         user_idx = len(users)
         users.append(name)
         for idx, movie_idx, rate, timestamp, text in comments_:
             data.append((user_idx, movie_idx, idx, rate, timestamp, text))
 
-        if i % 1000 == 0:
-            percent = 100 * (i+1) / n_paths
-            n_data = len(data)
-            print(f'\rScanning {percent:.4}%: {n_data} rates', end='')
-    print(f'\rScanning has been finished. Found {n_data} rates')
-    print(f'Number of exceptions = {n_exceptions}')
+        duplicated_checker.insert(user_idx, comment_idxs, primary_key)
 
-    data_major, users_major = renumbering_users_by_frequency(data_major, users_major)
-    data_minor, users_minor = renumbering_users_by_frequency(data_minor, users_minor, len(users_major))
-    return data_major, users_major, data_minor, users_minor
+        if user_idx < 3:
+            print('In duplicated user check')
+            print(f'primary key = {primary_key}')
+            print(f'comment to user = {duplicated_checker.comment_to_user}\n')
+
+    n_data = len(data)
+    suffix = ' ' * 40
+    print(f'\rScanning has been finished. Found {n_data} rates{suffix}')
+    print(f'Number of exceptions = {n_exceptions}')
+    print(f'Number of similar users = {n_similars}, duplicated users = {n_duplicateds}')
+
+#     data_major, users_major = renumbering_users_by_frequency(data_major, users_major)
+#     data_minor, users_minor = renumbering_users_by_frequency(data_minor, users_minor, len(users_major))
+#     return data_major, users_major, data_minor, users_minor
+    return data, users, duplicated_checker
 
 def renumbering_users_by_frequency(data, users, begin=0):
     user_idxs, movie_idxs, idxs, rates, timestamps, texts = zip(*data)
@@ -147,18 +178,18 @@ def renumbering_users_by_frequency(data, users, begin=0):
 
     return data, users
 
-#############################
-## duplicated user remover ##
 
 class IndexTable:
+    "duplicated user remover"
     def __init__(self):
         self.comment_to_user = dict()
         self.user_to_comments = dict()
 
-    def insert(self, user_idx, comment_idxs):
+    def insert(self, user_idx, comment_idxs, primary_key):
         """
         user_idx : int
         comment_idxs : tuple of int
+        primary_key : list of tuple (comment idx, timestamp)
         """
         for cidx in comment_idxs:
             # insert user to `comment to user`
@@ -166,104 +197,8 @@ class IndexTable:
             userset.add(user_idx)
             self.comment_to_user[cidx] = userset
         # insert comments to `user to comments`
-        self.user_to_comments[user_idx] = comment_idxs
+        self.user_to_comments[user_idx] = primary_key
 
-def insert(data, table):
-    """
-    Arguments
-    ---------
-    data : list of tuple
-        Tuple, (user, movie, comment idx, _, _, _)
-        Sorted by (user, movie, comment idx)
-    table : IndexTable
-        Database
-
-    Usage
-    -----
-    Insert data to database
-
-        >>> table = IndexTable()
-        >>> table = insert(data_minor, table)
-    """
-    prev_user_idx = -1
-    temporal = []
-    n_data = len(data)
-    for i, (user, movie, comment, _, _, _) in enumerate(data):
-        if (user != prev_user_idx) and (temporal):
-            temporal = sorted(temporal)
-            table.insert(user, tuple(temporal))
-            temporal = []
-        temporal.append(comment)
-        prev_user_idx = user
-        if i % 100000 == 0:
-            print(f'\rInserting rows {100*i/n_data:.4} % ...', end='', flush=True)
-    if temporal:
-        table.insert(prev_user_idx, tuple(temporal))
-    print(f'\rInserion has been done. The size of rows = {n_data}  ')
-    return table
-
-def remove_duplicated_users(data):
-    """
-    Arguments
-    ---------
-    data : list of tuple
-        A tuple consists of (user, movie, comment idx, rate, time, text)
-
-    Usage
-    -----
-        >>> data_minor_ = remove_duplicated_users(data_minor)
-    """
-    table = IndexTable()
-    table = insert(data, table)
-    candidates = candidates_of_duplicated_users(table)
-    duplicateds = {u for base in  candidates for u in find_duplicated_users(table, base)}
-    print(f'# candidates : {len(candidates)}, # duplicateds : {len(duplicateds)}')
-
-    n_before = len(data)
-    data = [row for row in data if not (row[0] in duplicateds)]
-    n_after = len(data)
-    diff = n_before - n_after
-    percent = 100 * n_after / n_before
-    print(f'# rows : {n_before} -> {n_after} (-{diff}, {percent:.4}%)')
-    return data
-
-def candidates_of_duplicated_users(table):
-    return {u for users in table.comment_to_user.values() for u in users if len(users) > 2}
-
-def find_duplicated_users(table, user):
-    """
-    Arguments
-    ---------
-    table : IndexTable
-        Database
-    user : int
-        User idx
-
-    Usage
-    -----
-    Insert data to database
-
-        >>> table = IndexTable()
-        >>> table = insert(data_minor, table)
-
-    Find duplicated user candidates
-
-        >>> candidates = candidates_of_duplicated_users(table)
-
-    If the `user` 0 is doubtful, find similar users.
-    If similar users are [0, 1, 2], this function returns the indices after second [1, 2] as duplicated ones.
-
-        >>> for user in sorted(candidates):
-        >>>    print(user, find_duplicated_users(table, user))
-    """
-    comments = table.user_to_comments[user]
-    user_counter = Counter([user for cidx in comments for user in table.comment_to_user[cidx]])
-    base = user_counter[user]
-    duplicated = [u for u, c in user_counter.items() if (abs(c-base) <= 1)]
-    duplicated = sorted(duplicated)
-    if len(duplicated) == 1:
-        return []
-    return duplicated[1:]
 
 ######################
 ## making directing ##
