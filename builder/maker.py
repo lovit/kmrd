@@ -4,13 +4,13 @@ import numpy as np
 from collections import Counter
 from datetime import datetime
 from glob import glob
-from .utils import initialize_usermapper
-from .utils import save_usermapper
-from .utils import save_rows
-from .utils import load_usermapper
-from .utils import load_list_of_dict
-from .utils import mask_user
-from .utils import to_unix_time
+from utils import initialize_usermapper
+from utils import save_usermapper
+from utils import save_rows
+from utils import load_usermapper
+from utils import load_list_of_dict
+from utils import mask_user
+from utils import to_unix_time
 
 def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
     data, users, _ = load_comments(data_dir, debug)

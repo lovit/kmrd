@@ -7,7 +7,7 @@ from maker import make_rates
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', type=str, default='../scraped/', help='Raw data directory')
+    parser.add_argument('--data_dir', type=str, default='../../naver_movie_scraper/tmp/scraped/', help='Raw data directory')
     parser.add_argument('--dataset_dir', type=str, default='../dataset/', help='Dataset directory')
     parser.add_argument('--min_count', type=int, default=20, help='User min count')
     parser.add_argument('--volume_unit', type=int, default=1000000, help='Volume unit')
@@ -34,9 +34,9 @@ def main():
              39516, 137952, 69023, 52747, 24452, 13252]
         )
 
-    #make_meta(data_dir, movie_indices, dataset_dir)
-    #make_directing(data_dir, movie_indices, dataset_dir)
-    #make_casting(data_dir, movie_indices, dataset_dir)
+    make_meta(data_dir, movie_indices, dataset_dir)
+    make_directing(data_dir, movie_indices, dataset_dir)
+    make_casting(data_dir, movie_indices, dataset_dir)
     make_rates(data_dir, debug, min_count, dataset_dir, volume)
 
 if __name__ == '__main__':
