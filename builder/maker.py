@@ -13,7 +13,7 @@ from .utils import mask_user
 from .utils import to_unix_time
 
 def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
-    data_major, users_major, data_minor, users_minor = load_comments(data_dir, debug, min_count)
+    data_users = load_comments(data_dir, debug)
 
     ##############################
     # frequency filtered dataset #
@@ -146,37 +146,39 @@ def load_comments(data_dir, debug):
     print(f'Number of exceptions = {n_exceptions}')
     print(f'Number of similar users = {n_similars}, duplicated users = {n_duplicateds}')
 
-#     data_major, users_major = renumbering_users_by_frequency(data_major, users_major)
-#     data_minor, users_minor = renumbering_users_by_frequency(data_minor, users_minor, len(users_major))
-#     return data_major, users_major, data_minor, users_minor
     return data, users, duplicated_checker
 
-def renumbering_users_by_frequency(data, users, begin=0):
-    user_idxs, movie_idxs, idxs, rates, timestamps, texts = zip(*data)
-    user_idxs = np.array(user_idxs)
-    users = np.array(users)
+def split_by_min_count(data, min_count):
+    user_size = Counter(row[0] for row in data)
+    user_large = {u for u, c in user_size.items() if c >= min_count}
+    user_small = {u for u, c in user_size.items() if c < min_count}
+    print(f'{len(user_large)} users >= {min_count}, {len(user_small)} users < {min_count}')
 
-    # count users
-    user_count = np.bincount(user_idxs, minlength=users.shape[0])
-    sorted_indices = user_count.argsort()[::-1]
-    indices_transfer = np.array(
-        [new_idx for new_idx, _ in sorted(enumerate(sorted_indices), key=lambda x:x[1])])
+    def sort_by_size(userset, user_size):
+        return sorted(userset, key=lambda u:-user_size[u])
 
-    # reordering
-    user_idxs = indices_transfer[user_idxs] + begin
-    users = np.array(users)[sorted_indices]
+    user_mapper = {u:idx for idx, u in enumerate(sort_by_size(user_large, user_size))}
+    b = len(user_mapper)
+    user_mapper.update({u:idx+b for idx, u in enumerate(sort_by_size(user_small, user_size))})
 
-    # drop zero vector users
-    user_count = np.bincount(user_idxs, minlength=users.shape[0])
-    zero_users = np.where(user_count == 0)[0]
-    if zero_users.shape[0] > 0:
-        users = users[:zero_users[0]]
+    def transform_idx(row):
+        return (user_mapper[row[0]], row[1], row[2], row[3], row[4], row[5])
 
-    # remake
-    data = tuple(zip(tuple(user_idxs), movie_idxs, idxs, rates, timestamps, texts))
-    data = sorted(data)
+    data_filtered = [transform_idx(row) for row in data if row[0] in user_large]
+    data_full = [transform_idx(row) for row in data]
+    userlist_full = [u for u, _ in sorted(user_mapper.items(), key=lambda x:x[1])]
+    userlist_filtered = userlist_full[:b]
 
-    return data, users
+    data_filtered = sorted(data_filtered)
+    data_full = sorted(data_full)
+
+    n_full, n_filtered = len(data_full), len(data_filtered)
+    percent = 100 * n_filtered / n_full
+    print(f'\nfiltered data size is {percent:.4}% of full data size')
+    print(f'#rows of filtered = {n_filtered}, #users = {len(userlist_filtered)}')
+    print(f'#rows of full = {n_full}, #users = {len(userlist_full)}')
+
+    return data_filtered, userlist_filtered, data_full, userlist_full
 
 
 class IndexTable:
