@@ -13,12 +13,7 @@ from .utils import mask_user
 from .utils import to_unix_time
 
 def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
-    data_users = load_comments(data_dir, debug)
-
-    ##############################
-    # frequency filtered dataset #
-    dataname = f'kmrd-{int(len(data_major) / volume)}m'
-    user_idxs, movie_idxs, idxs, rates, timestamps, texts = zip(*data_major)
+    data, users, _ = load_comments(data_dir, debug)
 
     def save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, users, dataname):
         if not os.path.exists(f'{dataset_dir}/{dataname}'):
@@ -43,25 +38,17 @@ def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
             for idx in idxs:
                 f.write(f'{idx}\n')
 
-    save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, users_major, dataname)
-    print('saved filtered dataset')
+    data_filtered, userlist_filtered, data_full, userlist_full = split_by_min_count(data, min_count)
 
-    ########################
-    # non-filtered dataset #
-    user_idxs_, movie_idxs_, idxs_, rates_, timestamps_, texts_ = zip(*data_minor)
+    dataname = f'kmrd-{int(len(data_filtered) / volume)}m'
+    user_idxs, movie_idxs, idxs, rates, timestamps, texts = zip(*data_filtered)
+    save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, userlist_filtered, dataname)
+    print(f'saved filtered dataset, {dataname} to {dataset_dir}')
 
-    # concatenate
-    user_idxs += user_idxs_
-    movie_idxs += movie_idxs_
-    idxs += idxs_
-    rates += rates_
-    timestamps += timestamps_
-    texts += texts_
-    users = np.concatenate([users_major, users_minor])
-    dataname = f'kmrd-{int(len(rates) / volume)}m'
-
-    save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, users, dataname)
-    print('saved non-filtered dataset\ndone')
+    dataname = f'kmrd-{int(len(data_full) / volume)}m'
+    user_idxs, movie_idxs, idxs, rates, timestamps, texts = zip(*data_full)
+    save(user_idxs, movie_idxs, idxs, rates, timestamps, texts, userlist_full, dataname)
+    print(f'saved full dataset, {dataname} to {dataset_dir}')
 
 def load_comments(data_dir, debug):
 
