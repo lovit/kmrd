@@ -17,7 +17,9 @@ tmp/
 # dataset
 *.txt
 *.csv
+dataset/
 !/kmr_dataset/datafile/kmrd-small/*.txt
 !/kmr_dataset/datafile/kmrd-small/*.csv
 userlist
+comment_indices*
 
