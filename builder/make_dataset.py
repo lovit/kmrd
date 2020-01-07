@@ -12,7 +12,7 @@ def main():
     parser.add_argument('--min_count', type=int, default=20, help='User min count')
     parser.add_argument('--volume_unit', type=int, default=1000000, help='Volume unit')
     parser.add_argument('--debug', dest='debug', action='store_true')
-    parser.add_argument('--only_rate', dest='debug', action='store_true', help='Make only rates.csv')
+    parser.add_argument('--only_rate', dest='only_rate', action='store_true', help='Make only rates.csv')
 
     args = parser.parse_args()
     data_dir = args.data_dir
