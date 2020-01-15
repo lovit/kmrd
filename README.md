@@ -15,7 +15,7 @@ python setup.py install
 
 ## Load data
 
-All identifier of users are masked. `timestamps` format is UNIX time (second). Choose the size from ['small', '2m', '5m']
+`load_rates` function returns sparse matrix formed user-item-rate matrix and numpy.ndarray formed timestamp. All identifier of users are masked. `timestamps` format is UNIX time (second). Choose the size from ['small', '2m', '5m']
 
 ```python
 from kmr_dataset import load_rates
@@ -25,6 +25,33 @@ paths = get_paths(size='small')
 # paths = get_paths(size='2m')
 rates, timestamps = load_rates(size='small')
 # rates, timestamps = load_rates(size='5m')
+```
+
+`load_histories` function returns dict of list formed user histories
+
+```python
+from kmr_dataset import load_histories
+
+histories = load_histories(size='small')
+```
+
+To see the histories of user 0,
+
+```python
+historeis[0]
+```
+
+The result follows the format of (item, rate, UNIX time).
+
+```
+[(10003, 7, 1494128040),
+ (10004, 7, 1467529800),
+ (10018, 9, 1513344120),
+ (10021, 9, 1424497980),
+ (10022, 7, 1427627340),
+ (10023, 7, 1428738480),
+ (10024, 4, 1429359420),
+ ...
 ```
 
 ## Statistics
