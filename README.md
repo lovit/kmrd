@@ -4,17 +4,96 @@ MovieLens style dataset built from Naver Movie rating systems with [Naver Movie 
 
 [scraper]: https://github.com/lovit/naver_movie_scraper
 
-## KMRD-small
+## Install
 
-Dataset consists with 999 movies, 52k users and 134k rates. All identifier of users are masked. `timestamps` format is UNIX time (second).
+Clone this repository, and execute python script
+
+```
+git clone https://github.com/lovit/kmrd
+python setup.py install
+```
+
+## Load data
+
+All identifier of users are masked. `timestamps` format is UNIX time (second). Choose the size from ['small', '2m', '5m']
 
 ```python
 from kmr_dataset import load_rates
 from kmr_dataset import get_paths
 
 paths = get_paths(size='small')
+# paths = get_paths(size='2m')
 rates, timestamps = load_rates(size='small')
+# rates, timestamps = load_rates(size='5m')
 ```
+
+## Statistics
+
+### KMRD-small
+
+Some users in KMRD-small have rated only one item. The first comment, `73.3% rates, 16292 users (31.3%, # >= 2)`, means that 73.3% (user, item) elements consists of 16292 users who did rating at least 2 items. There are also heavy users who have rated many movies. Therefore, after removing them, we listed the results of performing the same statistics.
+
+```
+Description
+ - num user : 52028
+ - num item : 10999
+ - num unique user : 52028 (100.0 %)
+ - num unique item : 600 (5.455 %)
+ - num of nonzero : 134331
+ - sparsity : 0.9997652606410895
+ - sparsity (compatified) : 0.9956968363189052
+```
+
+![](./figures/kmrd-small-dist.png)
+
+### KMRD-2m
+
+All users in KMRD-2m and KMRD-5m have rated at least 20 times. However, some users have done to same items duplicatedly in KMRD dataset. 
+
+```
+Description
+ - num user : 32151
+ - num item : 191238
+ - num unique user : 32151 (100.0 %)
+ - num unique item : 41706 (21.81 %)
+ - num of nonzero : 2569799
+ - sparsity : 0.9995820440836619
+ - sparsity (compatified) : 0.9980835118800974
+```
+
+![](./figures/kmrd-2m-dist.png)
+
+### KMRD-5m
+
+```
+Description
+ - num user : 86457
+ - num item : 191238
+ - num unique user : 86457 (100.0 %)
+ - num unique item : 48840 (25.54 %)
+ - num of nonzero : 4941301
+ - sparsity : 0.9997011405760968
+ - sparsity (compatified) : 0.9988297854523261
+```
+
+![](./figures/kmrd-5m-dist.png)
+
+### MovieLens-20m
+
+In contrast to, MovieLens dataset does not include the duplicated (user, item) elements.
+
+```
+Description
+ - num user : 138494
+ - num item : 131263
+ - num unique user : 138493 (100.0 %)
+ - num unique item : 26744 (20.37 %)
+ - num of nonzero : 20000263
+ - sparsity : 0.9988998233532408
+ - sparsity (compatified) : 0.9946001521864456
+```
+
+![](./figures/movielens-20m-dist.png)
 
 ## Files of dataste
 
