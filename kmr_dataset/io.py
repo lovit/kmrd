@@ -8,7 +8,9 @@ from .install import _check_install
 
 installpath = os.path.abspath(os.path.dirname(__file__))
 
-def _check_size(size):
+def _check_size(size, force):
+    if force:
+        return True
     available_size = '2m 5m small'.split()
     if not (size in available_size):
         raise ValueError(f'Size must be one of {available_size}')
@@ -36,8 +38,33 @@ def _get_paths_large(directory, size):
     paths = [f'{directory}/{file}' for file in files]
     return paths
 
-def get_paths(directory=None, size='small'):
-    _check_size(size)
+
+def get_paths(directory=None, size='small', force=False):
+    """
+    Arguments
+    ---------
+    directory : str or None
+        Data stored directory path
+    size : str
+        Choose one of ['small', '2m', '5m']
+        Or you can set ``force`` as True if you have same formed dataset
+    force : Boolean
+        If you have same fomed dataset, set ``directory`` and ``force=True``
+
+    Returns
+    -------
+    paths : list of str
+        List of file path which are availble to load
+
+    Usage
+    -----
+        >>> from kmr_dataset import get_paths
+        >>> paths = get_paths(size='2m')
+
+        >>> import pandas as pd
+        >>> movies = pd.read_csv(paths[3], delimiter='\t')
+    """
+    _check_size(size, force)
     directory = _initialize_dir(directory, size)
     if size == 'small':
         paths = _get_paths_small(directory)
