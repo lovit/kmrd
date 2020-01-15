@@ -28,7 +28,7 @@ def plot_user_rates(x, min_counts, noise_levels, data_name):
     titles = []
     for lv, idx in zip(noise_levels, noise_indices):
         covered = 100 * sorted_bincount[idx:].sum() / sorted_bincount.sum()
-        titles.append(f'{data_name}, remove top {100*lv:.2} users (-{idx} idxs)')
+        titles.append(f'{data_name}, remove top {100*lv:.3}% users (-{idx} idxs)')
 
     figures = plot_cumulations(cum, line_x_indices, texts, noise_indices, titles)
     return figures
