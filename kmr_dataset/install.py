@@ -5,9 +5,29 @@ import zipfile
 installpath = os.path.abspath(os.path.dirname(__file__))
 patch_urls = {}
 
-def _check_install(path):
-    if not os.path.exists(path):
-        raise ValueError(f"Datafiles has not been installed yet\npath = {path}")
+def _check_install(paths, size):
+    if size == 'small':
+        for path in paths:
+            if not os.path.exists(path):
+                name = path.split("/")[-1]
+                raise ValueError(f'Reinstall KMRD package. {name} is not found')
+        return True
+
+    metazip_path = f'{installpath}/datafile/kmrd/meta.zip'
+    ratezip_path = f'{installpath}/datafile/kmrd/rates-{size}.zip'
+    for path in paths:
+        if not os.path.exists(path):
+            if path.split('/')[-1][:5] == 'rates':
+                if not os.path.exists(metazip_path):
+                    raise ValueError(f'Reinstall KMRD package. meta.zip is not found')
+                unzip(ratezip_path, f'{installpath}/datafile/kmrd/')
+                print(f'Unzipped rates-{size}.zip')
+            else:
+                if not os.path.exists(ratezip_path):
+                    raise ValueError(f'Reinstall KMRD package. rates-{size}.zip is not found')
+                unzip(metazip_path, f'{installpath}/datafile/kmrd/')
+                print('Unzipped meta.zip')
+    return True
 
 def unzip(source, destination):
     """

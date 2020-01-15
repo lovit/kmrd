@@ -7,6 +7,11 @@ from .install import _check_install
 
 installpath = os.path.abspath(os.path.dirname(__file__))
 
+def _check_size(size):
+    available_size = '2m 3m 5m 14m small'.split()
+    if not (size in available_size):
+        raise ValueError(f'Size must be one of {available_size}')
+
 def _initialize_dir(directory, size):
     if directory is not None:
         directory = f'{directory}/datafile/'
@@ -25,19 +30,20 @@ def _get_paths_small(directory):
     return paths
 
 def _get_paths_large(directory, size):
-    files = 'castings.csv countries.csv genres.csv movies.txt peoples.txt rates.csv'.split()
-    files[-1] = f'rates-{size}.csv'
+    files = 'castings.csv countries.csv dates.csv directings.csv genres.csv movies.txt peoples.txt rates.csv roles.txt'.split()
+    files[-2] = f'rates-{size}.csv'
     paths = [f'{directory}/{file}' for file in files]
     return paths
 
 def get_paths(directory=None, size='small'):
+    _check_size(size)
     directory = _initialize_dir(directory, size)
     if size == 'small':
         paths = _get_paths_small(directory)
     else:
         paths = _get_paths_large(directory, size)
 
-    # TODO
+    _check_install(paths, size)
     return paths
 
 def load_rates(directory=None, size='small'):
