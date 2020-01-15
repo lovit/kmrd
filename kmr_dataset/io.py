@@ -30,8 +30,8 @@ def _get_paths_small(directory):
     return paths
 
 def _get_paths_large(directory, size):
-    files = 'castings.csv countries.csv dates.csv directings.csv genres.csv movies.txt peoples.txt rates.csv roles.txt'.split()
-    files[-2] = f'rates-{size}.csv'
+    files = 'castings.csv countries.csv genres.csv movies.txt peoples.txt rates.csv'.split()
+    files[-1] = f'rates-{size}.csv'
     paths = [f'{directory}/{file}' for file in files]
     return paths
 
