@@ -1,6 +1,6 @@
 # Korean Movie Recommender system Dataset
 
-MovieLens style dataset built from Naver Movie rating systems with [Naver Movie Scraper][scraper]
+MovieLens style synthetic dataset built from Naver Movie rating systems with [Naver Movie Scraper][scraper]
 
 [scraper]: https://github.com/lovit/naver_movie_scraper
 
@@ -122,7 +122,7 @@ Description
 
 ![](./figures/movielens-20m-dist.png)
 
-## Files of dataste
+## Files of dataset
 
 Dataset consists of following files.
 
