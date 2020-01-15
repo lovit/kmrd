@@ -8,7 +8,7 @@ from .install import _check_install
 installpath = os.path.abspath(os.path.dirname(__file__))
 
 def _check_size(size):
-    available_size = '2m 3m 5m 14m small'.split()
+    available_size = '2m 5m small'.split()
     if not (size in available_size):
         raise ValueError(f'Size must be one of {available_size}')
 
