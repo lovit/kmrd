@@ -1,5 +1,6 @@
 import os
 import numpy as np
+from collections import defaultdict
 from glob import glob
 from scipy.sparse import csr_matrix
 from .install import _check_install
@@ -46,6 +47,22 @@ def get_paths(directory=None, size='small'):
     _check_install(paths, size)
     return paths
 
+def _prepare_rate_loader(directory, size):
+    _check_size(size)
+
+    directory = _initialize_dir(directory, size)
+    if size == 'small':
+        path = f'{directory}/rates.csv'
+    else:
+        path = f'{directory}/rates-{size}.csv'
+
+    _check_install([path], size)
+
+    def parser(line):
+        return [int(col) for col in line.strip().split(',')]
+
+    return path, parser
+
 def load_rates(directory=None, size='small'):
     """
     Arguments
@@ -68,18 +85,7 @@ def load_rates(directory=None, size='small'):
         >>> rates, timestamps = load_rates(size='small')
     """
 
-    _check_size(size)
-
-    directory = _initialize_dir(directory, size)
-    if size == 'small':
-        path = f'{directory}/rates.csv'
-    else:
-        path = f'{directory}/rates-{size}.csv'
-
-    _check_install([path], size)
-
-    def parser(line):
-        return [int(col) for col in line.strip().split(',')]
+    path, parser = _prepare_rate_loader(directory, size)
 
     rows, cols, data, timestamps = [], [], [], []
     exists = set()
@@ -110,3 +116,42 @@ def load_rates(directory=None, size='small'):
     rates = csr_matrix((data, (rows, cols)))
     timestamps = np.array(timestamps, dtype=np.int)
     return rates, timestamps
+
+def load_histories(directory=None, size='small'):
+    """
+    Arguments
+    ---------
+    directory : str or None
+        Data directory. If None, use default directory
+    size : str
+        Dataset size, Choice one of ['small']
+
+    Returns
+    -------
+    user_item_history : dict of list
+
+        {
+            user: [(item, rate, time), (item, rate, time), ...],
+            user: [(item, rate, time), (item, rate, time), ...],
+            ...
+        }
+
+        time is UNIX time format
+
+    Usage
+    -----
+        >>> from kmr_dataset import load_history
+        >>> histories = load_history(size='small')
+    """
+
+    path, parser = _prepare_rate_loader(directory, size)
+
+    histories = defaultdict(lambda: [])
+    with open(path, encoding='utf-8') as f:
+        # skip head: user,movie,rate,time
+        next(f)
+        for line in f:
+            # user, movie, rate, time
+            u, m, r, t = parser(line)
+            histories[u].append((m, r, t))
+    return dict(histories)
