@@ -8,14 +8,36 @@ from .install import _check_install
 installpath = os.path.abspath(os.path.dirname(__file__))
 
 def _initialize_dir(directory, size):
-    if directory is None:
-        return f'{installpath}/datafile/kmrd-{size}/'
-    return f'{directory}/'
+    if directory is not None:
+        directory = f'{directory}/datafile/'
+        if not os.path.exists(directory):
+            raise ValueError(f'Directory {directory} must include "datafile/kmrd-small/" and "datafile/kmrd/"')
+    else:
+        directory = f'{installpath}/datafile/'
+
+    if size == 'small':
+        return f'{directory}/kmrd-small/'
+    return f'{directory}/kmrd/'
+
+def _get_paths_small(directory):
+    files = 'castings.csv countries.csv genres.csv movies.txt peoples.txt rates.csv'.split()
+    paths = [f'{directory}/{file}' for file in files]
+    return paths
+
+def _get_paths_large(directory, size):
+    files = 'castings.csv countries.csv genres.csv movies.txt peoples.txt rates.csv'.split()
+    files[-1] = f'rates-{size}.csv'
+    paths = [f'{directory}/{file}' for file in files]
+    return paths
 
 def get_paths(directory=None, size='small'):
     directory = _initialize_dir(directory, size)
-    paths = glob(f'{directory}/*.txt') + glob(f'{directory}/*.csv')
-    paths = sorted(paths)
+    if size == 'small':
+        paths = _get_paths_small(directory)
+    else:
+        paths = _get_paths_large(directory, size)
+
+    # TODO
     return paths
 
 def load_rates(directory=None, size='small'):

@@ -17,6 +17,6 @@ setup(
     keywords = ['Recommender system dataset'],
     packages=find_packages(),
     package_data={
-        'kmr_dataset':['datafile/kmrd-small/*']
+        'kmr_dataset':['datafile/kmrd-small/*', 'datafile/kmrd/*.zip']
     },
 )
