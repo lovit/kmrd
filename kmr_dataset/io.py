@@ -67,8 +67,16 @@ def load_rates(directory=None, size='small'):
         >>> from kmr_dataset import load_rates
         >>> rates, timestamps = load_rates(size='small')
     """
-    path = _initialize_dir(directory, size) + 'rates.csv'
-    _check_install(path)
+
+    _check_size(size)
+
+    directory = _initialize_dir(directory, size)
+    if size == 'small':
+        path = f'{directory}/rates.csv'
+    else:
+        path = f'{directory}/rates-{size}.csv'
+
+    _check_install([path], size)
 
     def parser(line):
         return [int(col) for col in line.strip().split(',')]
