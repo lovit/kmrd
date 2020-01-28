@@ -8,7 +8,7 @@ from .install import _check_install
 
 installpath = os.path.abspath(os.path.dirname(__file__))
 
-def _check_size(size, force):
+def _check_size(size, force=False):
     if force:
         return True
     available_size = '2m 5m small'.split()
