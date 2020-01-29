@@ -136,7 +136,7 @@ def load_rates(directory=None, size='small'):
     if n_continues > 0:
         flag = len(rows) == len(cols) == len(data) == len(timestamps)
         if flag:
-            print(f'skip {n_continues} lines, #uniques={len(rows)}')
+            print(f'skip {n_continues} lines which are duplicated (user, item), #uniques={len(rows)}')
         else:
             raise ValueError(f'There unexpected error in data {path}')
 
