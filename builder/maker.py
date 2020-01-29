@@ -12,6 +12,13 @@ from utils import load_list_of_dict
 from utils import mask_user
 from utils import to_unix_time
 
+
+def normalize_text(text):
+    text = text.replace('"', "")
+    text = text.replace('\r', '')
+    text = text.replace('\n', ' ')
+    return text.strip()
+
 def make_rates(data_dir, debug, min_count, dataset_dir, volume=1000000):
     data, users, _ = load_comments(data_dir, debug)
 
@@ -235,7 +242,7 @@ def make_directing(data_dir, movie_indices, dataset_dir):
             n_peoples = len(people_dictionary)
             n_directings = len(directings)
             print(f'\rScanning {percent:.4}%: {n_peoples} peoples & {n_directings} directings from {n_movies} movies', end='')
-    print(f'\rScanning has been finished. Found {n_peoples} peoples & {n_directings} directings from {n_movies} movies')
+    print(f'\rScanning has been finished. Found {n_peoples} peoples & {n_directings} directings from {n_movies} movies\n')
 
     save_rows(directings, directings_path, 'movie,people', ',')
     people_dictionary = [(idx, names[0], names[1]) for idx, names in sorted(people_dictionary.items())]
@@ -329,14 +336,14 @@ def make_meta(data_dir, movie_indices, dataset_dir):
         with open(inpath, encoding='utf-8') as f:
             data = json.load(f)
 
-        title = data['title']
-        title_eng = data.get('e_title', '')
+        title = normalize_text(data['title'])
+        title_eng = normalize_text(data.get('e_title', ''))
         grade = data.get('grade', '')
         genres_i = data.get('genres', [])
         dates_i = data.get('open_date', [])
-        year = ''
+        year = '-'
         if dates_i:
-            year = dates_i[0][:4]
+            year = dates_i[-1][:4]
         countries_i = data.get('countries', [])
 
         movies.append((movie_idx, title, title_eng, year, grade))

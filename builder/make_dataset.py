@@ -7,7 +7,7 @@ from maker import make_rates
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', type=str, default='../naver_movie_scraper/data/', help='Raw data directory')
+    parser.add_argument('--data_dir', type=str, default='/mnt/sdb2/naver_movie_scraper/data/', help='Raw data directory')
     parser.add_argument('--dataset_dir', type=str, default='../dataset/', help='Dataset directory')
     parser.add_argument('--min_count', type=int, default=20, help='User min count')
     parser.add_argument('--volume_unit', type=int, default=1000000, help='Volume unit')
