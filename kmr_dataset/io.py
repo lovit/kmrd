@@ -141,7 +141,7 @@ def load_rates(directory=None, size='small'):
             raise ValueError(f'There unexpected error in data {path}')
 
     rates = csr_matrix((data, (rows, cols)))
-    timestamps = np.array(timestamps, dtype=np.int)
+    timestamps = np.array(timestamps, dtype=np.int_)
     return rates, timestamps
 
 def load_histories(directory=None, size='small'):
